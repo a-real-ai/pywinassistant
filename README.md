@@ -1,15 +1,8 @@
-# WinAssist
-"WinAssist" is an open-source Windows 10/11 Python framework to artificially assist the user interface using chatGPT.
+# PyWinAssistant
+"PyWinAssistant" is an open-source Windows 10/11 Python framework to artificially assist the user interface using chatGPT API without using OCR and with minimal usage of vision models.
 
 Image analysis is implemented but not used. It's a work in progress to use the minimal data.
-AI-Driven UI Testing Framework using the win32api "WinAssist," an innovative Apache 2.0 open-source Python framework designed for Windows 10/11. This project pioneers a new approach in UI assistance and testing by leveraging the capabilities of ChatGPT.
-
-https://youtu.be/bhfRlVz18bw?t=198
-from 3:18 to 5:30 is now possible thanks to this application. 
-But it is not using image analysis, it's using chatGPT.
-
-https://youtu.be/bhfRlVz18bw?t=367
-Totally agree. This is the future of UI testing.
+AI-Driven UI Testing Framework using the win32api "PyWinAssistant," an innovative Apache 2.0 open-source Python framework designed for Windows 10/11. This project pioneers a new approach in UI assistance and testing by leveraging the capabilities of ChatGPT.
 
 ###  Overview
 Talk with your computer friendly and naturally. 
@@ -45,6 +38,11 @@ The act() function is a streamlined method for executing single, straightforward
 
 ### Conclusion:
 This Artificially Assisted User Interface Testing framework is a pioneering tool in the realm of desktop automation. Its ability to understand and execute a wide range of commands in a natural, intuitive manner makes it an invaluable asset for anyone looking to enhance their productivity and interaction with their Windows environment. It's not just a tool; it's a step towards a future where AI seamlessly integrates into our daily computing tasks, making technology more accessible and user-friendly.
+
+# Usage
+Run "Assistant.py", talk to it or enable the chat. Use Right click above the Assistant to see the available options for the assistant.
+For debugging mode execute "Driver.py". Inside it you can debug and try easily the funcitons of "act", "fast_act" and "assitant" by using the examples.
+To run a JSON test case, modify the JSON path from the "assistant" function.
 
 # Working cases (on cases.py)
 
