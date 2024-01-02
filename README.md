@@ -124,3 +124,7 @@ Artificially Assisted User Interface Testing harnesses the power of artificial i
     Predictive Analysis and Risk Assessment: By analyzing past data, Artificially Assisted User Interface Testing tools can predict potential problem areas and allocate testing resources more efficiently. This proactive approach to risk management ensures that critical issues are identified and addressed early in the development lifecycle.
 
 In conclusion, Artificially Assisted User Interface Testing represents a significant leap forward in software quality assurance. By automating and enhancing the testing process, AI-driven tools offer improved accuracy, speed, and coverage, paving the way for more reliable and user-friendly applications.
+
+### Notes:
+
+This project is being updated as of start of 2024. The list of requirements is being updated.
