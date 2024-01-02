@@ -101,7 +101,7 @@ def imaging(window_title=None, additional_context=None, x=None, y=None, screensh
     screenshot = capture_screenshot(window, region)
 
     # Optionally, paste the cursor onto the screenshot, adjusting for the offset if a region is specified
-    cursor_img_path = r'C:\Users\Henyckma\PycharmProjects\winaiassist\core\media\Mouse_pointer_small.png'
+    cursor_img_path = r'media\Mouse_pointer_small.png'
     with Image.open(cursor_img_path) as cursor:
         cursor = cursor.convert("RGBA")  # Ensure cursor image has an alpha channel for transparency
 
