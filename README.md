@@ -4,6 +4,12 @@
 Image analysis is implemented but used minimally. To work with minimal data is being implemented.
 AI-Driven UI Testing Framework using the win32api "PyWinAssistant," an innovative MIT license open-source Python framework designed for Windows 10/11. This project pioneers a new approach in UI assistance and testing by leveraging the capabilities of ChatGPT.
 
+Current methods for utilizing the computer by voice involves to learn a large list of commands and speaking numbers to interact with the computer. This framework gets rid of that and makes easier the interaction by only using natural language.
+It has built in accessibility options.
+
+![image](https://github.com/a-real-ai/pywinassistant/assets/18397328/93c0f123-2d57-419f-a586-32d9fe51e0b2)
+
+
 ###  Overview
 Talk with your computer friendly and naturally. 
 
@@ -40,7 +46,8 @@ The act() function is a streamlined method for executing single, straightforward
 This Artificially Assisted User Interface Testing framework is a pioneering tool in the realm of desktop automation. Its ability to understand and execute a wide range of commands in a natural, intuitive manner makes it an invaluable asset for anyone looking to enhance their productivity and interaction with their Windows environment. It's not just a tool; it's a step towards a future where AI seamlessly integrates into our daily computing tasks, making technology more accessible and user-friendly.
 
 # Usage
-Run "Assistant.py", talk to it or enable the chat. Use Right click above the Assistant to see the available options for the assistant.
+Run "Assistant.py", say "Ok computer" to enable the assistant or click to it or enable the chat for a fast action. Use Right click above the Assistant to see the available options for the assistant.
+
 For debugging mode execute "Driver.py". Inside it you can debug and try easily the funcitons of "act" wiwh is used alongside with the assistant, "fast_act" and "assitant" by using the examples.
 To run a JSON test case, modify the JSON path from the "assistant" function.
 
