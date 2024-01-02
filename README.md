@@ -20,7 +20,7 @@ It's engineered to be modular, understand and execute a wide range of tasks, fro
 1. Single Action Execution:
 The act() function is a streamlined method for executing single, straightforward actions, enhancing the tool's efficiency and responsiveness.
 2. Advanced Context Handling: The framework is adept at understanding context through the keep_in_mind parameter, ensuring that actions are carried out with an awareness of the necessary prerequisites or steps.
-3. Wide Application Range: From multimedia control (like playing songs or pausing playback on Spotify and YouTube) to complex actions (like creating AI-generated essays, sending emails, or managing applications like HueSync and Steam), the framework covers a broad spectrum of tasks.
+3. Wide Application Range: From multimedia control (like playing songs or pausing playback on Spotify and YouTube) to complex actions (like creating AI-generated text, sending emails, or managing applications like Telegram or Firefox), the framework covers a broad spectrum of tasks.
 4. Customizable AI Identity: The write_action() function allows for a customizable assistant identity, enabling personalized interactions and responses that align with the user's preferences or the nature of the task.
 5. Robust Error Handling and Feedback: The framework is designed to handle unexpected scenarios gracefully, providing clear feedback and ensuring reliability. (In Overview)
 5. Projects for mood and personality: Generate or suggest now and then useful scenarios basing in your mood and personality. (In Overview)
@@ -57,8 +57,6 @@ write_action(goal="Comment about why IA is great for the current playing song", 
 assistant(f"Create a long AI essay about an AI Starting to control a Windows computer on Notepad")  # Working 100%
 act(goal="Click on Stop Light Sync button in HueSync app")  # Working 100%
 act(goal="Click on the button at the bottom in HueSync app")  # Working 100%
-act(goal="Click on Shop on Steam")  # Working 100%
-act(goal="Click on Search text input on steam")  # Working 100%
 write_action(goal="Weird Fishes - Radiohead")  # Working 100%
 assistant(f"Open Calc and press 4 x 4 - 4 * 4 + 1 =")  # Working 100%
 assistant(goal=f"Open 3 new tabs on google chrome and in each of them search for 3 different types of funny dogs", keep_in_mind=" Filter the results by images.")  # Working 100%
@@ -88,13 +86,6 @@ act("Go to Home on Spotify")  # Working 100%
 act("Save the song to my library on Spotify")  # Working 100%
 # Other actions:
 act("Click on the button start the light sync in Phillips Hue App")
-
-# UI's with generated elements that not always work :(
-assistant(f"Start Grand Teft Auto V on Steam")  # Working 50% - It stops at the "Play" button. Try with a reminder.
-assistant(goal="Open spotify and Search the album \'Grimes - Visions\'",
-          keep_in_mind=f"Search and Catalog by album. To play the album open it and click on the big green play button at the left.")  # Working 50%, the "big green play" seem to be a nice band lol. Try with a reminder.
-assistant(f"Click on Stop Recording in OBS Streaming app")  # Working 50%. ETA 15 minutes, just window fdinding problem. Should
-
 ```
 ___
 # Current approaches to UI Testing
