@@ -1083,7 +1083,7 @@ def create_database(database_file):
     ''')
     conn.commit()
     conn.close()
-database_file = r'C:\Users\Henyckma\PycharmProjects\winaiassist\assistance\prompts\history.db'
+database_file = r'Database\history.db'
 create_database(database_file)
 
 def database_add_case(database_file, app_name, goal, instructions):
