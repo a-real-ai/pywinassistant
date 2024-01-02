@@ -1,8 +1,8 @@
 # PyWinAssistant
 "PyWinAssistant" is an open-source Windows 10/11 Python framework to artificially assist the user interface using chatGPT API without using OCR and with minimal usage of vision models.
 
-Image analysis is implemented but not used. It's a work in progress to use the minimal data.
-AI-Driven UI Testing Framework using the win32api "PyWinAssistant," an innovative Apache 2.0 open-source Python framework designed for Windows 10/11. This project pioneers a new approach in UI assistance and testing by leveraging the capabilities of ChatGPT.
+Image analysis is implemented but used minimally. To work with minimal data is being implemented.
+AI-Driven UI Testing Framework using the win32api "PyWinAssistant," an innovative MIT license open-source Python framework designed for Windows 10/11. This project pioneers a new approach in UI assistance and testing by leveraging the capabilities of ChatGPT.
 
 ###  Overview
 Talk with your computer friendly and naturally. 
@@ -41,7 +41,7 @@ This Artificially Assisted User Interface Testing framework is a pioneering tool
 
 # Usage
 Run "Assistant.py", talk to it or enable the chat. Use Right click above the Assistant to see the available options for the assistant.
-For debugging mode execute "Driver.py". Inside it you can debug and try easily the funcitons of "act", "fast_act" and "assitant" by using the examples.
+For debugging mode execute "Driver.py". Inside it you can debug and try easily the funcitons of "act" wiwh is used alongside with the assistant, "fast_act" and "assitant" by using the examples.
 To run a JSON test case, modify the JSON path from the "assistant" function.
 
 # Working cases (on cases.py)
@@ -50,11 +50,11 @@ To run a JSON test case, modify the JSON path from the "assistant" function.
 assistant(goal=f"Play the song \'One More Time - Daft Punk\' on Spotify")  # Working 100%
 assistant(goal=f"Open a new tab the song \'Wall Of Eyes - The Smile\', from google search results filter by videos then play it on Firefox")  # Working 100%
 assistant(goal=f"Open a new tab the song \'Windows XP Error beat\', from google search results filter by videos then play it by clicking on the text on Firefox.")  # Working 100%
-act(goal=f"Click on the Like button on Mozilla Firefox") # Working 100%
+fast_act(goal=f"Click on the Like button") # Working 100%
 assistant(goal=f"Pause the music on Spotify")  # Working 100%
 write_action(goal="Comment about why IA is great for the current playing song", assistant_identity="You\'re an advanced music AI agent that specializes on music") # Working 100%
 assistant(f"Create a long AI essay about an AI Starting to control a Windows computer on Notepad")  # Working 100%
-act(goal="Click on the button at the bottom in HueSync app")  # Working 100%
+fast_act(goal="Click on the button at the bottom in HueSync app")  # Working 100%
 write_action(goal="Weird Fishes - Radiohead")  # Working 100%
 assistant(f"Open Calc and press 4 x 4 - 4 * 4 + 1 =")  # Working 100%
 assistant(goal=f"Open 3 new tabs on google chrome and in each of them search for 3 different types of funny dogs", keep_in_mind=" Filter the results by images.")  # Working 100%
@@ -72,13 +72,13 @@ assistant(goal=f"Play the song \'The Smile - Wall Of Eyes\' on Spotify")  # Work
 assistant(goal=f"Play the song \'Panda Bear - Tropic of cancer\' on Spotify")  # Working 100%
 assistant(goal="Pause the music on the Spotify app")  # Working 100%
 assistant(goal=f"Open 3 new tabs with different Daft Punk songs on each of them on Firefox")  # Working 100%
-act("Open spotify and Search the album \'Grimes - Visions\'")  # Working 100%
+fast_act("Open spotify and Search the album \'Grimes - Visions\'")  # Working 100%
 write_action("Open spotify and Search the album \'Grimes - Visions\'")  # Working 100%
-act("Click on the first result on spotify")  # Working 100%
-act("Skip to the next song on Spotify")  # Working 100%
-act("Add the album to the library")  # Working 100%
-act("Go to Home on Spotify")  # Working 100%
-act("Save the song to my library on Spotify")  # Working 100%
+fast_act("Click on the first result on spotify")  # Working 100%
+fast_act("Skip to the next song on Spotify")  # Working 100%
+fast_act("Add the album to the library")  # Working 100%
+fast_act("Go to Home on Spotify")  # Working 100%
+fast_act("Save the song to my library on Spotify")  # Working 100%
 ```
 ___
 # Current approaches to UI Testing
