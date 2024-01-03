@@ -20,11 +20,11 @@ It's engineered to be modular, understand and execute a wide range of tasks, fro
 
 
 # Demos
-## Screenshots:
-Has built in accessibility functions.
-![image](https://github.com/a-real-ai/pywinassistant/assets/18397328/93c0f123-2d57-419f-a586-32d9fe51e0b2) ![image](https://github.com/a-real-ai/pywinassistant/assets/18397328/42d2e3d5-9be7-4d4a-825d-e80891aeb0eb)
 
-## Videos:
+![image](https://github.com/a-real-ai/pywinassistant/assets/18397328/93c0f123-2d57-419f-a586-32d9fe51e0b2)
+
+![image](https://github.com/a-real-ai/pywinassistant/assets/18397328/42d2e3d5-9be7-4d4a-825d-e80891aeb0eb)
+
 ### Use your computer by natural language:
 Does not use any vision. Only API calls.
 
