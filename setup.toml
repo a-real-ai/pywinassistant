@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "PyWinAssistant"
+version = "v1.4.0"
+description = "Artificially Assisted Graphical User Interface. Control your computer freely by using natural language. Have your own assistant to interact with your computer the way you want."
+authors = [{name = "Brandon Joan Rosas Delgado", email = "bd7672a@gmail.com"}]
+license = "MIT"
+requires-python = ">=3.7"
+
+dependencies = [
+    "pywinauto",
+    "pyautogui",
+    "pygetwindow",
+    "customtkinter",
+    "openai",
+    "Pillow",
+    "speech_recognition",
+    "requests",
+    "pywin32",
+    "psutil",
+    "fuzzywuzzy",
+    "pytesseract",
+    "uiautomation",
+    "gtts",
+    "pygame",
+]
+
+[tool.pytest.ini_options]
+addopts = "-ra -q"
+testpaths = [
+    "tests",
+]
