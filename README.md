@@ -2,10 +2,9 @@
 "PyWinAssistant" is an open-source Windows 10/11 Python framework to artificially assist the user interface using chatGPT API without using OCR and with minimal usage of vision models.
 
 Image analysis is implemented but used minimally. To work with minimal data is being implemented.
-AI-Driven UI Testing Framework using the win32api "PyWinAssistant," an innovative MIT license open-source Python framework designed for Windows 10/11. This project pioneers a new approach in UI assistance and testing by leveraging the capabilities of ChatGPT.
+This AI-Driven UI Testing Framework using the win32api "PyWinAssistant," an innovative MIT license open-source Python framework designed for Windows 10/11. This project pioneers a new approach in UI assistance and testing.
 
-Current methods for utilizing the computer by voice involves to learn a large list of commands and speaking numbers to interact with the computer. This framework gets rid of that and makes easier the interaction by only using natural language.
-It has built in accessibility options.
+Current methods for utilizing the computer by voice involves to learn a large list of commands and speaking large numbers to interact with the elements located in the computer. This framework gets rid of that and makes easier the interaction by only using natural language. It has built in accessibility options.
 
 
 # Overview
@@ -21,22 +20,22 @@ It's engineered to be modular, understand and execute a wide range of tasks, fro
 
 
 # Demos
-
 ## Screenshots:
-
+Has built in accessibility functions.
 ![image](https://github.com/a-real-ai/pywinassistant/assets/18397328/93c0f123-2d57-419f-a586-32d9fe51e0b2) ![image](https://github.com/a-real-ai/pywinassistant/assets/18397328/42d2e3d5-9be7-4d4a-825d-e80891aeb0eb)
 
 ## Videos:
-
 ### Use your computer by natural language:
+Does not use any vision. Only API calls.
 
 https://github.com/a-real-ai/pywinassistant/assets/18397328/25b39d8c-62d6-442e-9d5e-bc8a35aa971a
 
 ### Use your computer as an assistant:
+Uses vision. Gets to know what the user is doing and want is the user wanting to achieve and the assistant tries to perform it.
 
 https://github.com/a-real-ai/pywinassistant/assets/18397328/d04f0609-68fb-4fb4-9ac3-279047c7a4f7
 
-### The assistant can do anything for you. Can get to know the context of what the user is doing:
+### The assistant can do anything for you.
 
 https://github.com/a-real-ai/pywinassistant/assets/18397328/6d3bb6e6-ccf8-4380-bc89-df512ae207f2
 
@@ -71,7 +70,7 @@ This Artificially Assisted User Interface Testing framework is a pioneering tool
 # Usage
 Run "Assistant.py", say "Ok computer" to enable the assistant or click to it or enable the chat for a fast action. Use Right click above the Assistant to see the available options for the assistant.
 
-For debugging mode execute "Driver.py". Inside it you can debug and try easily the funcitons of "act" wiwh is used alongside with the assistant, "fast_act" and "assitant" by using the examples.
+For debugging mode execute "Driver.py". Inside it you can debug and try easily the funcitons of "act" wiwh is used alongside with the assistant, "fast_act" and "assistant" by using the examples.
 To run a JSON test case, modify the JSON path from the "assistant" function.
 
 # Working cases (on cases.py)
