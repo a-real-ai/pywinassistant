@@ -1,0 +1,21 @@
+Attributions for PyWinAssistant
+
+PyWinAssistant incorporates the following third-party modules, each with its own license:
+    openai: MIT license. More information is available at [https://github.com/openai/openai-python].
+    pywinauto: Licensed under BSD-3-Clause license . More information at [https://pywinauto.readthedocs.io/en/latest/contents.html].
+    pyautogui: Licensed under the BSD-3-Clause license. Details at [https://github.com/asweigart/pyautogui].
+    pygetwindow: BSD-3-Clause license [https://github.com/asweigart/pygetwindow]
+    PyWin32 (win32com, win32gui, win32con, win32api, win32process, winreg): Part of PyWin32, which is under the PSF license. More information can be found at [https://github.com/mhammond/pywin32].
+    customtkinter: MIT license. More info at [https://github.com/TomSchimansky/CustomTkinter].
+    Pillow (PIL): This project uses Pillow, an open-source HPND-licensed library. More info at [https://python-pillow.org/].
+    speech_recognition: This project incorporates the speech_recognition module, licensed under [BSD-3-Clause, GPL-2.0 licenses]. More details can be found at [https://github.com/Uberi/speech_recognition#readme].
+    psutil: This project uses psutil, distributed under the BSD-3-Clause license. More details at [https://github.com/giampaolo/psutil].
+    fuzzywuzzy: Available under the GPL-2.0 license. More information at [https://github.com/seatgeek/fuzzywuzzy].
+    pytesseract: An OCR tool licensed under the Apache License 2.0. More details at [https://github.com/madmaze/pytesseract].
+    uiautomation: Apache-2.0 license [https://github.com/yinkaisheng/Python-UIAutomation-for-Windows]
+    gTTS (Google Text-to-Speech): MIT license. More information at [https://github.com/pndurette/gTTS].
+    pygame: Licensed under the LGPL GNU Library or Lesser General Public License (LG PL) (LGPL). More details at [https://www.pygame.org/news].
+    tkinter: Part of Python's standard library, covered by the PSF license. [https://github.com/python/cpython/tree/3.12]
+
+
+Each module is the property of its respective owners, and PyWinAssistant is in no way affiliated with these modules.
