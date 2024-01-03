@@ -7,8 +7,22 @@ AI-Driven UI Testing Framework using the win32api "PyWinAssistant," an innovativ
 Current methods for utilizing the computer by voice involves to learn a large list of commands and speaking numbers to interact with the computer. This framework gets rid of that and makes easier the interaction by only using natural language.
 It has built in accessibility options.
 
-![image](https://github.com/a-real-ai/pywinassistant/assets/18397328/93c0f123-2d57-419f-a586-32d9fe51e0b2)
+# Demos
 
+### Screenshots:
+
+![image](https://github.com/a-real-ai/pywinassistant/assets/18397328/93c0f123-2d57-419f-a586-32d9fe51e0b2) ![image](https://github.com/a-real-ai/pywinassistant/assets/18397328/42d2e3d5-9be7-4d4a-825d-e80891aeb0eb)
+
+### Videos:
+
+# Use your computer by natural language:
+https://github.com/a-real-ai/pywinassistant/assets/18397328/25b39d8c-62d6-442e-9d5e-bc8a35aa971a
+
+# Use your computer as an assistant:
+https://github.com/a-real-ai/pywinassistant/assets/18397328/d04f0609-68fb-4fb4-9ac3-279047c7a4f7
+
+# The assistant can do anything for you. Can get to know the context of what the user is doing:
+https://github.com/a-real-ai/pywinassistant/assets/18397328/6d3bb6e6-ccf8-4380-bc89-df512ae207f2
 
 ###  Overview
 Talk with your computer friendly and naturally. 
