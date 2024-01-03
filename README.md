@@ -7,24 +7,8 @@ AI-Driven UI Testing Framework using the win32api "PyWinAssistant," an innovativ
 Current methods for utilizing the computer by voice involves to learn a large list of commands and speaking numbers to interact with the computer. This framework gets rid of that and makes easier the interaction by only using natural language.
 It has built in accessibility options.
 
-# Demos
 
-### Screenshots:
-
-![image](https://github.com/a-real-ai/pywinassistant/assets/18397328/93c0f123-2d57-419f-a586-32d9fe51e0b2) ![image](https://github.com/a-real-ai/pywinassistant/assets/18397328/42d2e3d5-9be7-4d4a-825d-e80891aeb0eb)
-
-### Videos:
-
-# Use your computer by natural language:
-https://github.com/a-real-ai/pywinassistant/assets/18397328/25b39d8c-62d6-442e-9d5e-bc8a35aa971a
-
-# Use your computer as an assistant:
-https://github.com/a-real-ai/pywinassistant/assets/18397328/d04f0609-68fb-4fb4-9ac3-279047c7a4f7
-
-# The assistant can do anything for you. Can get to know the context of what the user is doing:
-https://github.com/a-real-ai/pywinassistant/assets/18397328/6d3bb6e6-ccf8-4380-bc89-df512ae207f2
-
-###  Overview
+# Overview
 Talk with your computer friendly and naturally. 
 
 Use natural language to operate freely your Windows Operating System.
@@ -35,7 +19,29 @@ Your own open personal assistant that responds as you want, control the way you 
 
 It's engineered to be modular, understand and execute a wide range of tasks, from playing music on Spotify to conducting specific tasks on the internet, and even automating interactions with desktop applications.
 
-### Key Features
+
+# Demos
+
+## Screenshots:
+
+![image](https://github.com/a-real-ai/pywinassistant/assets/18397328/93c0f123-2d57-419f-a586-32d9fe51e0b2) ![image](https://github.com/a-real-ai/pywinassistant/assets/18397328/42d2e3d5-9be7-4d4a-825d-e80891aeb0eb)
+
+## Videos:
+
+### Use your computer by natural language:
+
+https://github.com/a-real-ai/pywinassistant/assets/18397328/25b39d8c-62d6-442e-9d5e-bc8a35aa971a
+
+### Use your computer as an assistant:
+
+https://github.com/a-real-ai/pywinassistant/assets/18397328/d04f0609-68fb-4fb4-9ac3-279047c7a4f7
+
+### The assistant can do anything for you. Can get to know the context of what the user is doing:
+
+https://github.com/a-real-ai/pywinassistant/assets/18397328/6d3bb6e6-ccf8-4380-bc89-df512ae207f2
+
+
+# Key Features
 - Dynamic Case Generator: The assistant() function accepts a goal parameter, which is a natural language command, and intelligently maps it to a series of executable actions. This allows for a seamless translation of user intentions into effective actions on the computer.
 1. Single Action Execution:
 The act() function is a streamlined method for executing single, straightforward actions, enhancing the tool's efficiency and responsiveness.
@@ -45,7 +51,8 @@ The act() function is a streamlined method for executing single, straightforward
 5. Robust Error Handling and Feedback: The framework is designed to handle unexpected scenarios gracefully, providing clear feedback and ensuring reliability. (In Overview)
 5. Projects for mood and personality: Generate or suggest now and then useful scenarios basing in your mood and personality. (In Overview)
 
-### Technical Innovations:
+
+# Technical Innovations:
 1. Natural Language Processing (NLP): Employs advanced NLP techniques to parse and understand user commands in a natural, conversational manner.
 2. Task Automation Algorithms: Utilizes sophisticated algorithms to break down complex tasks into executable steps.
 3. Context-Aware Execution: Integrates contextual awareness for more nuanced and effective task execution.
@@ -56,8 +63,10 @@ The act() function is a streamlined method for executing single, straightforward
 8. Enhancing accessibility for users with different needs, enabling voice or simple text commands to control complex actions.
 9. Assisting in learning and exploration by providing AI-driven guidance and execution of tasks.
 
-### Conclusion:
+
+# Conclusion:
 This Artificially Assisted User Interface Testing framework is a pioneering tool in the realm of desktop automation. Its ability to understand and execute a wide range of commands in a natural, intuitive manner makes it an invaluable asset for anyone looking to enhance their productivity and interaction with their Windows environment. It's not just a tool; it's a step towards a future where AI seamlessly integrates into our daily computing tasks, making technology more accessible and user-friendly.
+
 
 # Usage
 Run "Assistant.py", say "Ok computer" to enable the assistant or click to it or enable the chat for a fast action. Use Right click above the Assistant to see the available options for the assistant.
@@ -101,7 +110,8 @@ fast_act("Add the album to the library")  # Working 100%
 fast_act("Go to Home on Spotify")  # Working 100%
 fast_act("Save the song to my library on Spotify")  # Working 100%
 ```
-___
+
+
 # Current approaches to UI Testing
 ### There are three main types of GUI testing approaches, namely:
 
@@ -125,6 +135,7 @@ In this testing approach, we focus on building graphical models that describe th
 
 The model-based approach is great because it allows a higher level of automation. It also covers a higher number of states in the system, thereby improving the test coverage.
 
+
 # New Approaches to UI Testing using AI
 4. ***Artificially Assisted User Interface Testing:***
 
@@ -138,6 +149,7 @@ Artificially Assisted User Interface Testing harnesses the power of artificial i
     Predictive Analysis and Risk Assessment: By analyzing past data, Artificially Assisted User Interface Testing tools can predict potential problem areas and allocate testing resources more efficiently. This proactive approach to risk management ensures that critical issues are identified and addressed early in the development lifecycle.
 
 In conclusion, Artificially Assisted User Interface Testing represents a significant leap forward in software quality assurance. By automating and enhancing the testing process, AI-driven tools offer improved accuracy, speed, and coverage, paving the way for more reliable and user-friendly applications.
+
 
 ### Notes:
 
