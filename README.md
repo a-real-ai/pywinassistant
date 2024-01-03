@@ -25,17 +25,17 @@ It's engineered to be modular, understand and execute a wide range of tasks, fro
 
 ![image](https://github.com/a-real-ai/pywinassistant/assets/18397328/42d2e3d5-9be7-4d4a-825d-e80891aeb0eb)
 
-### Use your computer by natural language:
+### Use your computer by natural language
 Does not use any vision. Only API calls.
 
 https://github.com/a-real-ai/pywinassistant/assets/18397328/25b39d8c-62d6-442e-9d5e-bc8a35aa971a
 
-### Use your computer as an assistant:
+### Use your computer as an assistant
 Uses vision. Gets to know what the user is doing and want is the user wanting to achieve and the assistant tries to perform it.
 
 https://github.com/a-real-ai/pywinassistant/assets/18397328/d04f0609-68fb-4fb4-9ac3-279047c7a4f7
 
-### The assistant can do anything for you.
+### The assistant can do anything for you
 
 https://github.com/a-real-ai/pywinassistant/assets/18397328/6d3bb6e6-ccf8-4380-bc89-df512ae207f2
 
@@ -51,7 +51,7 @@ The act() function is a streamlined method for executing single, straightforward
 5. Projects for mood and personality: Generate or suggest now and then useful scenarios basing in your mood and personality. (In Overview)
 
 
-# Technical Innovations:
+# Technical Innovations
 1. Natural Language Processing (NLP): Employs advanced NLP techniques to parse and understand user commands in a natural, conversational manner.
 2. Task Automation Algorithms: Utilizes sophisticated algorithms to break down complex tasks into executable steps.
 3. Context-Aware Execution: Integrates contextual awareness for more nuanced and effective task execution.
@@ -63,7 +63,7 @@ The act() function is a streamlined method for executing single, straightforward
 9. Assisting in learning and exploration by providing AI-driven guidance and execution of tasks.
 
 
-# Conclusion:
+# Conclusion
 This Artificially Assisted User Interface Testing framework is a pioneering tool in the realm of desktop automation. Its ability to understand and execute a wide range of commands in a natural, intuitive manner makes it an invaluable asset for anyone looking to enhance their productivity and interaction with their Windows environment. It's not just a tool; it's a step towards a future where AI seamlessly integrates into our daily computing tasks, making technology more accessible and user-friendly.
 
 
