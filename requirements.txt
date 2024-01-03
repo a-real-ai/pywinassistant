@@ -1,0 +1,16 @@
+pywinauto
+pyautogui
+pygetwindow
+customtkinter
+openai
+Pillow  # This is the PIL (Python Imaging Library) package
+speech_recognition
+requests
+pywin32
+psutil
+ImageGrab  # Part of Pillow
+fuzzywuzzy
+pytesseract
+uiautomation
+gtts
+pygame
