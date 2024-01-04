@@ -23,7 +23,7 @@ from pywinauto import Application
 
 
 low_data_mode = True  # Avoids the usage of visioning after the case generation. Lowers the accuracy but is way faster.
-enable_learning_map = True  # Use this to enable the imaging learning map. Improves accuracy of overall performance.
+enable_semantic_router_map = True  # Use this to enable the imaging semantic routing map. Improves accuracy of overall performance.
 enable_ocr = False  # Works better if this is disabled. Can use the implementations from other projects for better OCR.
 # Did not implement the OCR as it is not needed for the current implementation. The AI must work with the current data.
 
@@ -109,7 +109,7 @@ json_case_example = r'''```json
 # Here you can load successful trained models to perform the task. ToDo: Use the database.
 def app_space_map(goal, app_name=None, single_step=None, map=''):
     if 'app_space' in map:
-        if enable_learning_map is True:
+        if enable_semantic_router_map is True:
             # Control elements map:
             if "twitter" in goal.lower() or "twitter" in app_name.lower():
                 element_map = r'''```
