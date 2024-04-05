@@ -1,23 +1,17 @@
 # PyWinAssistant
-"PyWinAssistant" is an open-source Windows 10/11 Python framework to artificially assist the user interface using chatGPT API without using OCR and with minimal usage of vision models.
+"PyWinAssistant" is the first Open Source Windows 10/11 Artificial Narrow Intelligence framework (Released on 31 Dec 2023) to artificially assist win32api human User Interfaces using Visualization-of-Thought (VoT) Elicits Spatial Reasoning in Large Language Models without OCR / object detection / segmentation. This improves the quality and minimizes data usage of vision models. This project pioneers a new approach to User Interface assistance and testing.
 
-Image analysis is implemented but used minimally. To work with minimal data is being implemented.
-This AI-Driven UI Testing Framework using the win32api "PyWinAssistant," an innovative MIT license open-source Python framework designed for Windows 10/11. This project pioneers a new approach in UI assistance and testing.
-
-Current methods for utilizing the computer by voice involves to learn a large list of commands and speaking large numbers to interact with the elements located in the computer. This framework gets rid of that and makes easier the interaction by only using natural language. It has built in accessibility options.
-
+Paper related: Visualization-of-Thought Elicits Spatial Reasoning in Large Language Models (Released on 4 Apr 2024)
+![image](https://github.com/a-real-ai/pywinassistant/assets/18397328/58c8e18d-b633-4a35-abc1-b8a76768e4e3)
+https://arxiv.org/abs/2404.03622
 
 # Overview
-Talk with your computer friendly and naturally. 
 
+Talk with your computer friendly and naturally to perform any User Interface activity.
 Use natural language to operate freely your Windows Operating System.
-
-Generate test cases of your UI applications for continuous testing on any Win32api supported application by simply using natural language.
-
+Generates and plans test cases of your User Interface applications for continuous testing on any Win32api supported application by simply using natural language.
 Your own open personal assistant that responds as you want, control the way you want your computer to assist you.
-
-It's engineered to be modular, understand and execute a wide range of tasks, from playing music on Spotify to conducting specific tasks on the internet, and even automating interactions with desktop applications.
-
+It's engineered to be modular, understand and execute a wide range of tasks, automating interactions with any desktop applications.
 
 # Demos
 
@@ -25,17 +19,17 @@ It's engineered to be modular, understand and execute a wide range of tasks, fro
 
 ![image](https://github.com/a-real-ai/pywinassistant/assets/18397328/42d2e3d5-9be7-4d4a-825d-e80891aeb0eb)
 
-### Use your computer by natural language
-Does not use any vision. Only API calls.
+### Use your computer by natural language - Real-time usage of VoT.
+Does not use any vision. Only API LLM calls.
 
 https://github.com/a-real-ai/pywinassistant/assets/18397328/25b39d8c-62d6-442e-9d5e-bc8a35aa971a
 
-### Use your computer as an assistant
-Uses vision. Gets to know what the user is doing and want is the user wanting to achieve and the assistant tries to perform it.
+### Use your computer as an assistant - Real-time usage of planning VoT.
+Uses minimal vision. Gets to know what the user is doing and what the user wants to achieve and the assistant plans to perform it.
 
 https://github.com/a-real-ai/pywinassistant/assets/18397328/d04f0609-68fb-4fb4-9ac3-279047c7a4f7
 
-### The assistant can do anything for you
+### The assistant can do anything for you - Real-time usage of planning VoT.
 
 https://github.com/a-real-ai/pywinassistant/assets/18397328/6d3bb6e6-ccf8-4380-bc89-df512ae207f2
 
