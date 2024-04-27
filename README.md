@@ -1,5 +1,5 @@
 # PyWinAssistant
-"PyWinAssistant" is the first Open Source Windows 10/11 Artificial Narrow Intelligence framework (Released on 31 Dec 2023) to artificially assist win32api human User Interfaces using Visualization-of-Thought (VoT) Elicits Spatial Reasoning in Large Language Models without OCR / object detection / segmentation. This improves the quality and minimizes data usage of vision models. This project pioneers a new approach to User Interface assistance and testing.
+"PyWinAssistant" is the first Large Action Model, Open Source Windows 10/11 Artificial Narrow Intelligence framework (Released on 31 Dec 2023) to artificially assist any win32api human User Interfaces by utilizing Visualization-of-Thought (VoT) Elicits Spatial Reasoning in Large Language Models without OCR / object detection / segmentation. This improves the generality quality and minimizes the overall data usage of LLM and vision models. It has built-in assistance options to improve human utilization of a computer, with a new technical approach to User Interface and User Experience assistance and testing by spatial visualization of thought, generalizes correctly any natural language prompt, and plans to perform correct actions into the OS with security in mind.
 
 Paper related: Visualization-of-Thought Elicits Spatial Reasoning in Large Language Models (Released on 4 Apr 2024)
 ![image](https://github.com/a-real-ai/pywinassistant/assets/18397328/58c8e18d-b633-4a35-abc1-b8a76768e4e3)
@@ -10,7 +10,7 @@ https://arxiv.org/abs/2404.03622
 Talk with your computer friendly and naturally to perform any User Interface activity.
 Use natural language to operate freely your Windows Operating System.
 Generates and plans test cases of your User Interface applications for continuous testing on any Win32api supported application by simply using natural language.
-Your own open personal assistant that responds as you want, control the way you want your computer to assist you.
+Your own open and secure personal assistant that responds as you want, control the way you want your computer to assist you.
 It's engineered to be modular, understand and execute a wide range of tasks, automating interactions with any desktop applications.
 
 # Demos
@@ -19,31 +19,49 @@ It's engineered to be modular, understand and execute a wide range of tasks, aut
 
 ![image](https://github.com/a-real-ai/pywinassistant/assets/18397328/42d2e3d5-9be7-4d4a-825d-e80891aeb0eb)
 
-### Use your computer by natural language - Real-time usage of VoT.
+## Please enable the Audio for the demo videos.
+Voice 1 - Input Human (English Female Australian TTS)
+
+Voice 2 - Output Assistant (English Female US Google TTS)
+
+### Use your computer by natural language - Real-time usage of VoT, an example of a Single Action Model.
 Does not use any vision. Only API LLM calls.
 
 https://github.com/a-real-ai/pywinassistant/assets/18397328/25b39d8c-62d6-442e-9d5e-bc8a35aa971a
 
-### Use your computer as an assistant - Real-time usage of planning VoT.
-Uses minimal vision. Gets to know what the user is doing and what the user wants to achieve and the assistant plans to perform it.
+### Use your computer as an assistant - Real-time usage of planning VoT, an example of a Large Action Model.
+Uses minimal vision. Get to know what the user is doing and what is that the user wants to achieve, the assistant plans to perform it.
 
 https://github.com/a-real-ai/pywinassistant/assets/18397328/d04f0609-68fb-4fb4-9ac3-279047c7a4f7
 
-### The assistant can do anything for you - Real-time usage of planning VoT.
+### The assistant can do anything for you - Real-time usage of planning VoT, an example of a Large Action Model.
+The inference is the only constraint for speed.
 
 https://github.com/a-real-ai/pywinassistant/assets/18397328/6d3bb6e6-ccf8-4380-bc89-df512ae207f2
 
+### Other demos with Real-time usage of planning VoT.
+
+November 16th 2023 live demo: (Firefox, Spotify, Notepad, Calculator, Mail)
+
+https://github.com/a-real-ai/pywinassistant/assets/18397328/ce574640-5f20-4b8e-84f9-341fa102c0e6
+
+December 1st 2023 live demo: (Chrome, Spotify, Firefox)
+
+https://github.com/a-real-ai/pywinassistant/assets/18397328/7e0583d1-1c19-40fa-a750-a77fff98a6da
+
+Currently supporting all generalized win32api apps, meaning:
+Chrome, Firefox, OperaGX, Discord, Telegram, Spotify...
 
 # Key Features
 - Dynamic Case Generator: The assistant() function accepts a goal parameter, which is a natural language command, and intelligently maps it to a series of executable actions. This allows for a seamless translation of user intentions into effective actions on the computer.
 1. Single Action Execution:
 The act() function is a streamlined method for executing single, straightforward actions, enhancing the tool's efficiency and responsiveness.
-2. Advanced Context Handling: The framework is adept at understanding context trough analyzing the screen and the application, ensuring that actions are carried out with an awareness of the necessary prerequisites or steps.
+2. Advanced Context Handling: The framework is adept at understanding context through analyzing the screen and the application, ensuring that actions are carried out with an awareness of the necessary prerequisites or steps.
 3. Semantic router map: The framework has a database of a semantic router map to successfully execute generated test cases. This semantic maps can be created by other AI.
 4. Wide Application Range: From multimedia control (like playing songs or pausing playback on Spotify and YouTube) to complex actions (like creating AI-generated text, sending emails, or managing applications like Telegram or Firefox), the framework covers a broad spectrum of tasks.
 5. Customizable AI Identity: The write_action() function allows for a customizable assistant identity, enabling personalized interactions and responses that align with the user's preferences or the nature of the task.
 6. Robust Error Handling and Feedback: The framework is designed to handle unexpected scenarios gracefully, providing clear feedback and ensuring reliability. (In Overview)
-7. Projects for mood and personality: Generate or suggest now and then useful scenarios basing in your mood and personality. (In Overview)
+7. Projects for mood and personality: Generate or suggest now and then useful scenarios based in your mood and personality. (In Overview)
 
 
 # Technical Innovations
@@ -65,7 +83,7 @@ This Artificially Assisted User Interface Testing framework is a pioneering tool
 # Usage
 Run "Assistant.py", say "Ok computer" to enable the assistant or click to it or enable the chat for a fast action. Use Right click above the Assistant to see the available options for the assistant.
 
-For debugging mode execute "Driver.py". Inside it you can debug and try easily the funcitons of "act" wiwh is used alongside with the assistant, "fast_act" and "assistant" by using the examples.
+For debugging mode execute "Driver.py". Inside it you can debug and try easily the functions of "act" which is used alongside the assistant, "fast_act" and "assistant" by using the examples.
 To run a JSON test case, modify the JSON path from the "assistant" function.
 
 # Working cases (on cases.py)
