@@ -692,7 +692,7 @@ def act(single_step, keep_in_mind="", dont_click=False, double_click=False, righ
                 f"You are an AI Agent called Element Analyzer that receives an step and guesses if the goal was performed correctly.\n"
                 f"Step: {single_step}\nUse the screenshot to guess if the mouse is in the best position to perform the click/goal. Respond only with \"Yes\" or \"No\".\n"
                 f"The cursor is above an element from the step. Cursor info status: {get_cursor_shape()}. The cursor is above the following element: \n{selected_element}\n"
-                f"Double check your reponse by looking at where is located the mouse cursor on the screenshot and the cursor info status.")
+                f"Double check your response by looking at where is located the mouse cursor on the screenshot and the cursor info status.")
             element_analysis_result = imaging(window_title=app_name, additional_context=element_analysis, x=int(x), y=int(y))
             print(element_analysis_result)
 
