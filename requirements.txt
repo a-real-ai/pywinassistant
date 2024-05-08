@@ -4,7 +4,7 @@ pygetwindow
 customtkinter
 openai
 Pillow  # This is the PIL (Python Imaging Library) package
-speech_recognition
+speechRecognition
 requests
 pywin32
 psutil
@@ -14,3 +14,4 @@ pytesseract
 uiautomation
 gtts
 pygame
+pyAudio

@@ -79,6 +79,17 @@ The act() function is a streamlined method for executing single, straightforward
 # Conclusion
 This Artificially Assisted User Interface Testing framework is a pioneering tool in the realm of desktop automation. Its ability to understand and execute a wide range of commands in a natural, intuitive manner makes it an invaluable asset for anyone looking to enhance their productivity and interaction with their Windows environment. It's not just a tool; it's a step towards a future where AI seamlessly integrates into our daily computing tasks, making technology more accessible and user-friendly.
 
+# installation
+```
+cd pywinassistant
+pip install -r .\requirements.txt
+cd .\core
+
+add your API Key in /core/core_api.py
+client = OpenAI(api_key='insert_your_api_key_here')
+
+python ./assistant.py
+```
 
 # Usage
 Run "Assistant.py", say "Ok computer" to enable the assistant or click to it or enable the chat for a fast action. Use Right click above the Assistant to see the available options for the assistant.

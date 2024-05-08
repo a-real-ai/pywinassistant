@@ -5,9 +5,9 @@ import random
 from queue import Queue
 import speech_recognition as sr
 import threading
-from core.voice import speaker, set_volume, set_subtitles
+from voice import speaker, set_volume, set_subtitles
 from driver import assistant, act, fast_act, auto_role, perform_simulated_keypress, write_action
-from core.window_focus import activate_windowt_title
+from window_focus import activate_windowt_title
 
 # Initialize the speech recognition and text to speech engines
 assistant_voice_recognition_enabled = True  # Disable if you don't want to use voice recognition
