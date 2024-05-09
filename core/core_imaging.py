@@ -6,7 +6,7 @@ import io
 from PIL import Image
 
 # Assuming that the `activate_window_title` function is defined in another module correctly
-from core.window_focus import activate_windowt_title
+from window_focus import activate_windowt_title
 
 # OpenAI API Key
 api_key = 'insert_your_api_key_here'
