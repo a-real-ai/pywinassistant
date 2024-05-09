@@ -1,5 +1,5 @@
 # PyWinAssistant
-"PyWinAssistant" is the first Large Action Model, Open Source Windows 10/11 Artificial Narrow Intelligence framework (Released on 31 Dec 2023) to artificially assist any win32api human User Interfaces by utilizing Visualization-of-Thought (VoT) Elicits Spatial Reasoning in Large Language Models without OCR / object detection / segmentation. This improves the generality quality and minimizes the overall data usage of LLM and vision models. It has built-in assistance options to improve human utilization of a computer, with a new technical approach to User Interface and User Experience assistance and testing by spatial visualization of thought, generalizes correctly any natural language prompt, and plans to perform correct actions into the OS with security in mind.
+"PyWinAssistant" is the first Large Action Model, Open Source Windows 10/11 Artificial Narrow Intelligence framework (Released on 31 Dec 2023, released before Microsoft's VoT paper) to artificially assist any win32api human User Interfaces by utilizing Visualization-of-Thought (VoT) Elicits Spatial Reasoning in Large Language Models without OCR / object detection / segmentation. This improves the generality quality and minimizes the overall data usage of LLM and vision models. It has built-in assistance options to improve human utilization of a computer, with a new technical approach to User Interface and User Experience assistance and testing by spatial visualization of thought, generalizes correctly any natural language prompt, and plans to perform correct actions into the OS with security in mind.
 
 Paper related: Visualization-of-Thought Elicits Spatial Reasoning in Large Language Models (Released on 4 Apr 2024)
 ![image](https://github.com/a-real-ai/pywinassistant/assets/18397328/58c8e18d-b633-4a35-abc1-b8a76768e4e3)
@@ -13,11 +13,21 @@ Generates and plans test cases of your User Interface applications for continuou
 Your own open and secure personal assistant that responds as you want, control the way you want your computer to assist you.
 It's engineered to be modular, understand and execute a wide range of tasks, automating interactions with any desktop applications.
 
-# Demos
+# Demos (Videos below)
 
 ![image](https://github.com/a-real-ai/pywinassistant/assets/18397328/93c0f123-2d57-419f-a586-32d9fe51e0b2)
 
 ![image](https://github.com/a-real-ai/pywinassistant/assets/18397328/42d2e3d5-9be7-4d4a-825d-e80891aeb0eb)
+
+![Screenshot 2023-12-18 043612](https://github.com/a-real-ai/pywinassistant/assets/18397328/428d1a3f-ece7-4c58-9d1b-76138ce8807c)
+
+![Screenshot 2023-12-18 040443](https://github.com/a-real-ai/pywinassistant/assets/18397328/50543e40-f810-4e4f-9cca-3f1131ae1cc1)
+
+![Screenshot 2023-12-01 143812](https://github.com/a-real-ai/pywinassistant/assets/18397328/d88374c9-fb53-4ecf-b8b5-840ffaa5d8c1)
+
+![Screenshot 2023-12-01 150047](https://github.com/a-real-ai/pywinassistant/assets/18397328/f0c904c7-0c96-4d57-90a0-dc9084728131)
+
+![Screenshot 2023-11-13 161219](https://github.com/a-real-ai/pywinassistant/assets/18397328/b2c2a23c-f37f-4f1d-8628-69db6bf13ed9)
 
 ## Please enable the Audio for the demo videos.
 Voice 1 - Input Human (English Female Australian TTS)
@@ -79,7 +89,7 @@ The act() function is a streamlined method for executing single, straightforward
 # Conclusion
 This Artificially Assisted User Interface Testing framework is a pioneering tool in the realm of desktop automation. Its ability to understand and execute a wide range of commands in a natural, intuitive manner makes it an invaluable asset for anyone looking to enhance their productivity and interaction with their Windows environment. It's not just a tool; it's a step towards a future where AI seamlessly integrates into our daily computing tasks, making technology more accessible and user-friendly.
 
-# installation
+# Installation
 ```
 cd pywinassistant
 pip install -r .\requirements.txt
