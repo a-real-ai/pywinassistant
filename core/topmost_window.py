@@ -17,7 +17,7 @@ def enumerate_windows():
 def should_exclude_process(name):
     excluded_processes = ['dwm.exe', 'nvcontainer.exe', 'nvidia broadcast ui.exe', 'system', 'python.exe', 'steam.exe',
                           'TextInputHost.exe', 'tk', 'pycharm64.exe', 'nvidia broadcast.exe', 'widgets.exe',
-                          'CTkToplevel', 'Windows Input Experience', 'widgets.exe', 'translucenttb.exe', 
+                          'CTkToplevel', 'Windows Input Experience', 'widgets.exe', 'translucenttb.exe', 'amdow.exe',
                           'securityhealthsystray.exe', 'Ctk', 'Ctk.exe', 'tk', 'tk.exe', 'Code', 'Code.exe', 'NVIDIA Share.exe',
                           'NVIDIA Web Helper.exe', 'nvsphelper64.exe', 'NVIDIA GeForce Experience.exe',
                           'nvcontainer.exe', 'NVDisplay.Container.exe']
