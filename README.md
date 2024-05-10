@@ -95,9 +95,8 @@ cd pywinassistant
 pip install -r .\requirements.txt
 cd .\core
 
-add your API Key in /core/core_api.py
-client = OpenAI(api_key='insert_your_api_key_here')
-
+add your API Key in /core/core_api.py  ->  line 3: client = OpenAI(api_key='insert_your_api_key_here')
+add your API Key in /core/core_imaging.py  ->  line 12: api_key = 'insert_your_api_key_here'
 python ./assistant.py
 ```
 
