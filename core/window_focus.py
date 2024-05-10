@@ -56,7 +56,7 @@ def get_open_windows():
                             "CTkToplevel", 'Windows Input Experience', "SecurityHealthSystray.exe", "Steam.exe",
                             "SearchApp.exe", "ApplicationFrameHost.exe", "ShellExperienceHost.exe", "MicrosoftEdge.exe",
                             "MicrosoftEdgeCP.exe", "MicrosoftEdgeSH.exe", "python.exe", "pycharm64.exe", "pycharm64.exe",
-                            "Ctk", "Ctk.exe", "tk", "tk.exe", "Code", "Code.exe", 'amdow.exe',
+                            "Ctk", "Ctk.exe", "tk", "tk.exe", "Code", "Code.exe", "amdow.exe",
                             "nvidia broadcast.exe", "nvidia broadcast ui.exe", "NVIDIA Share.exe",
                             "NVIDIA Web Helper.exe", "nvsphelper64.exe", "NVIDIA GeForce Experience.exe",
                             "nvcontainer.exe", "NVDisplay.Container.exe"]
