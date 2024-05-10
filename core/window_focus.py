@@ -53,9 +53,13 @@ def get_installed_apps_registry():
 def get_open_windows():
     excluded_titles = ["AI Drone Assistant", "NVIDIA GeForce Overlay", "Windows Input Experience", "Program Manager"]
     excluded_executables = ["NVIDIA Share.exe", "TextInputHost.exe", "Tk.exe", "conhost.exe", "explorer.exe",
-                            'CTkToplevel', 'Windows Input Experience', "SecurityHealthSystray.exe", "Steam.exe",
+                            "CTkToplevel", 'Windows Input Experience', "SecurityHealthSystray.exe", "Steam.exe",
                             "SearchApp.exe", "ApplicationFrameHost.exe", "ShellExperienceHost.exe", "MicrosoftEdge.exe",
-                            "MicrosoftEdgeCP.exe", "MicrosoftEdgeSH.exe", "python.exe", "pycharm64.exe", "pycharm64.exe"]
+                            "MicrosoftEdgeCP.exe", "MicrosoftEdgeSH.exe", "python.exe", "pycharm64.exe", "pycharm64.exe"
+                            "Ctk", "Ctk.exe", "tk", "tk.exe", "Code", "Code.exe",
+                            "nvidia broadcast.exe", "nvidia broadcast ui.exe", "NVIDIA Share.exe",
+                            "NVIDIA Web Helper.exe", "nvsphelper64.exe", "NVIDIA GeForce Experience.exe",
+                            "nvcontainer.exe", "NVDisplay.Container.exe"]
 
     windows = gw.getAllWindows()
     print(windows)
