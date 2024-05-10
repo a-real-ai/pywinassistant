@@ -1,5 +1,5 @@
 # PyWinAssistant
-"PyWinAssistant" is the first Large Action Model, Open Source Windows 10/11 Artificial Narrow Intelligence framework (Released on 31 Dec 2023, released before Microsoft's VoT paper) to artificially assist any win32api human User Interfaces by utilizing Visualization-of-Thought (VoT) Elicits Spatial Reasoning in Large Language Models without OCR / object detection / segmentation. This improves the generality quality and minimizes the overall data usage of LLM and vision models. It has built-in assistance options to improve human utilization of a computer, with a new technical approach to User Interface and User Experience assistance and testing by spatial visualization of thought, generalizes correctly any natural language prompt, and plans to perform correct actions into the OS with security in mind.
+"PyWinAssistant" is the first Large Action Model, Open Source Windows 10/11 Artificial Narrow Intelligence framework (Released on 31 Dec 2023, before Microsoft's VoT paper) to artificially assist any win32api human User Interfaces by utilizing Visualization-of-Thought (VoT) Elicits Spatial Reasoning in Large Language Models without OCR / object detection / segmentation. This improves the generality quality and minimizes the overall data usage of LLM and vision models. It has built-in assistance options to improve human utilization of a computer, with a new technical approach to User Interface and User Experience assistance and testing by spatial visualization of thought, generalizes correctly any natural language prompt, and plans to perform correct actions into the OS with security in mind.
 
 Paper related: Visualization-of-Thought Elicits Spatial Reasoning in Large Language Models (Released on 4 Apr 2024)
 ![image](https://github.com/a-real-ai/pywinassistant/assets/18397328/58c8e18d-b633-4a35-abc1-b8a76768e4e3)
@@ -91,19 +91,23 @@ This Artificially Assisted User Interface Testing framework is a pioneering tool
 
 # Installation
 ```
-cd pywinassistant
-pip install -r .\requirements.txt
-cd .\core
-
+# Add your Chat-GPT API Keys to the project:
 add your API Key in /core/core_api.py  ->  line 3: client = OpenAI(api_key='insert_your_api_key_here')
 add your API Key in /core/core_imaging.py  ->  line 12: api_key = 'insert_your_api_key_here'
+
+# Install requirements:
+cd pywinassistant
+pip install -r .\requirements.txt
+
+# Execute the assistant:
+cd .\core
 python ./assistant.py
 ```
 
 # Usage
-Run "Assistant.py", say "Ok computer" to enable the assistant or click to it or enable the chat for a fast action. Use Right click above the Assistant to see the available options for the assistant.
+Run "Assistant.py", say "Ok computer" to enable the assistant by voice commands or click to it or enable the chat to do a fast action. Use Right click above the Assistant to see the available options for the assistant.
 
-For debugging mode execute "Driver.py". Inside it you can debug and try easily the functions of "act" which is used alongside the assistant, "fast_act" and "assistant" by using the examples.
+For debugging mode execute "Driver.py". Inside it, you can debug and try easily the functions of "act" which is used alongside the assistant, "fast_act" and "assistant" by using the examples.
 To run a JSON test case, modify the JSON path from the "assistant" function.
 
 # Working cases (on cases.py)
