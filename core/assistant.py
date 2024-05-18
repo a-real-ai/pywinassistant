@@ -295,6 +295,9 @@ def show_config(event):
 # Just for example purpose, you will replace this with actual commands
 def content_analysis():
     """Analyzes text content in the active window using OCR and reads it aloud."""
+    previous_window = get_previous_window()
+    if previous_window:
+        win32gui.SetForegroundWindow(previous_window)
     text = ocr_screen(focused=True)
     if text:
         speaker(f"The text in the active window is: {text}")
