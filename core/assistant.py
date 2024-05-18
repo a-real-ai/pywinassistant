@@ -238,7 +238,7 @@ def create_context_menu(event_x_root, event_y_root):
     # Buttons with commands
     Ctk.CTkButton(menu_frame, text="Call assistant", command=lambda: menu_command(generate_assistant_test_case(False))).pack(fill="x")
     Ctk.CTkButton(menu_frame, text="Fast action", command=lambda: menu_command(generate_assistant_test_case(True))).pack(fill="x")
-    Ctk.CTkButton(menu_frame, text="Content analysis", command=lambda: menu_command(dummy_command)).pack(fill="x")
+    Ctk.CTkButton(menu_frame, text="Content analysis", command=lambda: menu_command(content_analysis)).pack(fill="x")
 
     # Add separator or space between groups of options (This is an improvisation since Ctk doesn't have a separator widget)
     Ctk.CTkLabel(menu_frame, text="", height=3).pack(fill="x")
@@ -292,9 +292,16 @@ def show_config(event):
     create_context_menu(event.x_root, event.y_root)
 
 # Just for example purpose, you will replace this with actual commands
-def dummy_command():
-    speaker("Dummy item clicked")
-    print("Dummy item clicked")
+def content_analysis():
+    """Analyzes text content in the active window using OCR and reads it aloud."""
+    text = ocr_screen(focused=True)
+    if text:
+        speaker(f"The text in the active window is: {text}")
+        show_message(None, f"Text in window: {text}")
+    else:
+        speaker("No text was detected in the active window.")
+        show_message(None, "No text detected.")
+
 
 def generate_assistant_test_case(fast_act=False):
     # Function to perform a fast action
