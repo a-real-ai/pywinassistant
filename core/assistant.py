@@ -2,6 +2,7 @@ import customtkinter as Ctk
 from PIL import Image, ImageTk
 import time
 import random
+import win32gui
 from queue import Queue
 import speech_recognition as sr
 import threading
@@ -308,6 +309,7 @@ def content_analysis():
     if last_active_window:
         win32gui.SetForegroundWindow(last_active_window)  # Set focus to the last active window
         text = ocr_screen(focused=True)
+        print(f"OCR Output: {text}")  # Add this line
     if text:
         speaker(f"The text in the active window is: {text}")
         show_message(None, f"Text in window: {text}")
