@@ -92,8 +92,9 @@ This Artificially Assisted User Interface Testing framework is a pioneering tool
 # Installation
 ```
 # Add your Chat-GPT API Keys to the project:
-add your API Key in /core/core_api.py  ->  line 3: client = OpenAI(api_key='insert_your_api_key_here')
-add your API Key in /core/core_imaging.py  ->  line 12: api_key = 'insert_your_api_key_here'
+Create a .env file with your API Key in the project folder 
+and add your key like this: OPENAI_API_KEY=sk-pr....
+
 
 # Install requirements:
 cd pywinassistant

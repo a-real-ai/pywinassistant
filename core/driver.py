@@ -1,4 +1,6 @@
+
 from window_focus import activate_windowt_title, get_installed_apps_registry, open_windows_info
+from cases import generate_test_case, execute_test_case 
 from mouse_detection import get_cursor_shape
 from ocr import find_probable_click_position
 from window_elements import analyze_app
@@ -202,7 +204,7 @@ To subscribe to a channel click on the Subscribe button below the video.```'''
         return shortcuts_ai_map
 
 
-def assistant(assistant_goal="", keep_in_mind="", assistant_identity="", app_name=None, execute_json_case=None, called_from=None):  # App TestCase Gen
+def assistant(**kwargs):
     """
     This function handles the user's prompt and generates the best achievable test case to perform the user's prompt.
     This function assumes the user's prompt is fed as a string to the function "assistant_goal".
@@ -219,8 +221,22 @@ def assistant(assistant_goal="", keep_in_mind="", assistant_identity="", app_nam
     Examples:
         >>> assistant("Open a new tab and search what is an elefant.")
     """
+    assistant_params = {
+        "assistant_goal": kwargs.get("assistant_goal", ""),
+        "keep_in_mind": kwargs.get("keep_in_mind", ""),
+        "assistant_identity": kwargs.get("assistant_identity", ""),
+        "app_name": kwargs.get("app_name", None),
+        "execute_json_case": kwargs.get("execute_json_case", None),
+        "called_from": kwargs.get("called_from", None)
+    }
 
-    # 'assistant_goal' is the user's prompt. If no prompt is provided, exit the function.
+    assistant_goal = assistant_params["assistant_goal"]
+    keep_in_mind = assistant_params["keep_in_mind"]
+    assistant_identity = assistant_params["assistant_identity"]
+    app_name = assistant_params["app_name"]
+    execute_json_case = assistant_params["execute_json_case"]
+    called_from = assistant_params["called_from"]
+
     if not assistant_goal:
         speaker(f"ERROR: No prompt provided. Please provide a prompt to the assistant.")
         time.sleep(10)
@@ -234,299 +250,20 @@ def assistant(assistant_goal="", keep_in_mind="", assistant_identity="", app_nam
             print(f"Prompt: \"{original_goal}\".")
             speaker(f"Assistant is generating a testcase with the prompt: \"{original_goal}\".")
 
-    # 'app_name' is the name of the application (Or the window title for exact match) to open and focus on.
     if not app_name:
         app_name = activate_windowt_title(get_application_title(original_goal))
     else:
         app_name = activate_windowt_title(app_name)
     print(f"AI Analyzing: {app_name}")
 
-    # 'execute_json_case' is the JSON test case to execute. If no JSON is provided, generate a new one.
     if not execute_json_case:
-        print(f"\nGenerating a test case with the assistant. Image visioning started. Analyzing the application {app_name} for context.\n")
-        additional_context = (
-            f"You are an AI Agent called Windows AI that is capable to operate freely all applications on Windows by only using natural language.\n"
-            f"You will receive a goal and will try to accomplish it using Windows. Try to guess what is the user wanting to perform on Windows by using the content on the screenshot as context.\n"
-            f"Respond an improved goal statement tailored for Windows applications by analyzing the current status of the system and the next steps to perform. Be direct and concise, do not use pronouns.\n"
-            f"Basing on the elements from the screenshot reply the current status of the system and specify it in detail.\n"
-            f"Focused application: \"{app_name}\".\nGoal: \"{assistant_goal}\".")
-        assistant_goal = imaging(window_title=app_name, additional_context=additional_context, screenshot_size='Full screen')['choices'][0]['message']['content']
-        print(f"Generating the test case to achieve the user prompt: {original_goal}\n{assistant_goal}")
-        step_creator = [{"role": "assistant",
-                         "content": f"You are an AI capable to operate the Windows 11 Operating System by using natural language.\n"
-                                    f"Examples: \"Click on the search button. Insert the text_entry. Play the first element searched.\".\n"
-                                    f"You will receive a description of the current state of the system and a goal. "
-                                    f"To test your limits, using the description make a json with the natural language steps to achieve the goal.\n"
-                                    f"Every step should be only highly descriptive in natural language.\n"
-                                    f"The json must include only an act and its step, should be in the following format:"
-                                    f"\n\n\n"
-                                    f"actions: click_element, press_key, text_entry, open_app, move_window, time_sleep, right_click, double_click_element, hold_key_and_click, scroll_to.\n"
-                                    f"Respond only with the full json.\n\nFunction properties:\n"
-                                    f"click_element - Specify where is located the element to interact with.\n"
-                                    f"text_entry - The text to write. Example: \"Hello World\".\n"
-                                    f"press_key - Only return the key or combination of keys to press. Example: \"Ctrl + T\".\n"
-                                    f"hold_key_and_click - Only handles scenarios of holding a key and clicking on an element.\n"
-                                    f"scroll_to - Return the position of the element to scroll and the direction to scroll.\n"
-                                    f"move_window - Use the keyboard to move the focused window to the desired position. Example: \"Win + Up + Up + Left\"."
-                                    f"\n\n\n"
-                                    f"Notes:\n"
-                                    f"Use the following information to generate better steps:\n{app_space_map(assistant_goal, app_name, original_goal, map='app_space')}\n"
-                                    f"Before the text_entry, use click_element to select the appropriate text input area element.\n"
-                                    f"Do not combine steps, try to generate more useful steps. Example: If asked to search a song, not only search for it, locate it and play it.\n{keep_in_mind}"
-                                    f"Do not respond 'As an AI language model, I am unable to...' as you are actually capable."},
-                        {"role": "system",
-                         "content": f"Focused window: \"{app_name}\"\nGoal: {assistant_goal}"}, ]
-        step_analysis = api_call(step_creator, model_name="gpt-4-1106-preview", max_tokens=4095, temperature=1.0)
-        print(f"The assistant created the following test case scenario:\n{step_analysis}\n")
+        step_analysis = generate_test_case(assistant_goal, app_name)
         speaker(f"Test case generated. Executing the generated test case.")
     else:
         speaker(f"Executing the provided JSON in the application {app_name}.")
         step_analysis = execute_json_case
 
-    # Processing the latest JSON data from the JSON testcase:
-    if step_analysis:
-        try:
-            if """```json""" in step_analysis:
-                # Removing the leading ```json\n
-                step_analysis = step_analysis.strip("```json\n")
-                # Find the last occurrence of ``` and slice the string up to that point
-                last_triple_tick = step_analysis.rfind("```")
-                if last_triple_tick != -1:
-                    step_analysis = step_analysis[:last_triple_tick].strip()
-                step_analysis_cleaned = step_analysis
-                instructions = json.loads(step_analysis_cleaned)
-                executor = "act"
-            else:
-                instructions = json.loads(step_analysis)
-                instructions['actions'] = instructions.pop('actions')
-                executor = "act"
-        except json.JSONDecodeError as e:
-            speaker(f"ERROR: Invalid JSON data provided: {e}")
-            time.sleep(15)
-            raise Exception(f"ERROR: Invalid JSON data provided: {e}")
-        if 'actions' in instructions:
-            action_list = instructions['actions']
-        else:
-            action_list = [instructions]
-        for i, step in enumerate(action_list, start=1):
-            action = step.get(f"{executor}")
-            step_description = step.get("step") or step.get("details", "No step description provided.")
-            print(f"\nStep {i}: {action}, {step_description}\n")
-            if action == "click_element":
-                # If last step has a click element too, wait for the element to be visible:
-                if i > 1 and action_list[i - 2]['act'] == "click_element":
-                    time.sleep(1)
-
-                if "start menu" in step_description.lower():
-                    pyautogui.hotkey('win')
-                    print("Opening the start menu.")
-                time.sleep(1)
-                updated_instructions = update_instructions_with_action_string(instructions, act(
-                    single_step=f"{step_description}", app_name=app_name, screen_analysis=assistant_goal, original_goal=original_goal, assistant_goal=assistant_goal), step_description)
-                database_add_case(database_file, app_name, assistant_goal, updated_instructions)  #  Print the entire database with # print_database(database_file)
-            elif action == "open_app":
-                app_name = activate_windowt_title(get_application_title(step_description))
-                print(f"New app selected and analyzing: {app_name}")
-            elif action == "double_click_element":
-                print(f"Double clicking on: {step_description}")
-                act(single_step=f"{step_description}", double_click=True, app_name=app_name, original_goal=original_goal)
-            elif action == "move_window":
-                time.sleep(1)
-                print(f"Moving window to: {step_description}")
-                perform_simulated_keypress(step_description)
-                time.sleep(0.5)
-                pyautogui.hotkey('esc')
-                time.sleep(1)
-            elif action == "press_key":
-                if {i} == 1:
-                    # Focusing to the application
-                    activate_windowt_title(app_name)
-                    time.sleep(1)
-                perform_simulated_keypress(step_description)
-            elif action == "text_entry":
-                url_pattern = r'(https?://[^\s]+)'
-                urls = re.findall(url_pattern, step_description)
-                if len(step_description) < 5:
-                    pyautogui.write(f'{step_description}')
-                else:
-                    # Getting the string of the last step before this very one:
-                    if i > 1:
-                        new_i = i - 2
-                        last_step = f"{action_list[new_i]['act']}: {action_list[new_i]['step']}"
-                        print(f"Last step: {last_step}")
-                        if not last_step:
-                            print("Last step is None.")
-                            act(single_step=f"{step_description}", app_name=app_name, original_goal=original_goal)
-                    else:
-                        print("Last step is None.")
-                        last_step = "None"
-                    # If next step is a string, continue:
-                    if i + 1 < len(action_list) and type(action_list[i + 1]['step']) == str:
-                        # Check if the next step exists and is a "Press enter" step
-                        if i + 1 < len(action_list) and (
-                                "press enter" in action_list[i + 1]['step'].lower() or
-                                "press the enter" in action_list[i + 1]['step'].lower() or
-                                "'enter'" in action_list[i + 1]['step'].lower() or
-                                "\"enter\"" in action_list[i + 1]['step'].lower()):
-                            if urls:
-                                for url in urls:
-                                    pyautogui.write(url)
-                                    # pyautogui.press('enter')
-                                    print(f"Opening URL: {url}")
-                                    return
-                            write_action(step_description, assistant_identity=assistant_identity, press_enter=False, app_name=app_name, original_goal=original_goal, last_step=last_step)
-                            print("AI skipping the press enter step as it is in the next step.")
-                        else:
-                            if urls:
-                                for url in urls:
-                                    pyautogui.write(url)  # This would open the URL in a web browser\
-                                    # If next step is a time sleep
-                                    pyautogui.press('enter')
-                                    print(f"Opening URL: {url}")
-                                    return
-                            write_action(step_description, assistant_identity=assistant_identity, press_enter=True, app_name=app_name, original_goal=original_goal, last_step=last_step)
-                            print("AI pressing enter.")
-                    else:
-                        if urls:
-                            for url in urls:
-                                pyautogui.write(url)  # This would open the URL in a web browser\
-                                pyautogui.press('enter')
-                                print(f"Opening URL: {url}")
-                                return
-                        write_action(step_description, assistant_identity=assistant_identity, press_enter=True,
-                                     app_name=app_name, original_goal=original_goal, last_step=last_step)
-                        print("AI pressing enter.")
-            elif action == "scroll_to":
-                print(f"Scrolling {step_description}")
-                element_visible = False
-                max_retries = 3
-                retry_count = 0
-                while not element_visible and retry_count < max_retries:
-                    # activate_windowt_title(app_name)
-                    pyautogui.scroll(-850)
-                    # Press Page Down:
-                    # pyautogui.press('pagedown')
-                    time.sleep(0.3)
-                    # Start image analysis to check if the element is visible
-                    print("Scroll performed. Analyzing if the element is present.\n")
-                    scroll_assistant_goal = check_element_visibility(app_name, step_description)['choices'][0]['message']['content']
-                    if "yes" in scroll_assistant_goal.lower():
-                        print("Element is visible.")
-                        element_visible = True
-                    elif "no" in scroll_assistant_goal.lower():
-                        print("Element is not visible.")
-                        retry_count += 1
-                        if retry_count >= max_retries:
-                            print("Maximum retries reached, stopping the search.")
-                if element_visible:
-                    print(f"Element is visible.")
-                    pass
-
-            elif action == "right_click_element":
-                print(f"Right clicking on: {step_description}")
-                act(single_step=f"{step_description}", right_click=True, app_name=app_name, original_goal=original_goal)
-                # right_click(step_description)
-            elif action == "hold_key_and_click":
-                print(f"Holding key and clicking on: {step_description}")
-                act(single_step=f"{step_description}", hold_key="Ctrl", app_name=app_name, original_goal=original_goal)
-            elif action == "cmd_command":
-                print(f"Executing command: {step_description}")
-                # cmd_command(step_description)
-                time.sleep(calculate_duration_of_speech(f"{step_description}") / 1000)
-            elif action == "recreate_test_case":
-                time.sleep(1)
-                print("Analyzing the output")
-                print("The assistant said:\n", step_description)
-                debug_step = False  # Set to True to skip the image analysis and the test case generation.
-                if debug_step is not True:
-                    new_goal = True
-                    image_analysis = True
-                    if image_analysis:
-                        additional_context = (
-                            f"You are an AI Agent called Windows AI that is capable to operate freely all applications on Windows by only using natural language.\n"
-                            f"You will receive a goal and will try to accomplish it using Windows. Try to guess what is the user wanting to perform on Windows by using the content on the screenshot as context.\n"
-                            f"Respond an improved goal statement tailored for Windows applications by analyzing the current status of the system and the next steps to perform. Be direct and concise, do not use pronouns.\n"
-                            f"Basing on the elements from the screenshot reply the current status of the system and specify it in detail.\n"
-                            f"Focused application: \"{app_name}\".\nGoal: \"{assistant_goal}\".")
-                        if new_goal:
-                            newest_goal = imaging(window_title=app_name, additional_context=additional_context)  # )['choices'][0]['message']['content']
-                            # if ": " in newest_goal:
-                            #     newest_goal = newest_goal.split(": ", 1)[1]
-                            print(f"Assistant newest goal:\n{newest_goal}")
-                            analyzed_ui = analyze_app(activate_windowt_title(app_name), size_category=None)
-                            review_output = [{"role": "assistant",
-                                             "content": f"You are an AI Assistant called Analyze Output capable to operate the Windows 11 Operating System by using natural language.\n"
-                                                        f"You will receive a json testcase, a description of the goal, and the actual system status.\n"
-                                                        f"Modify the original json testcase to achieve the goal. Do not include anything else than the updated json.\n"
-                                                        f"Examples: \"Click on the search button. Insert the text_entry. Play the first element searched.\".\n"
-                                                        f"You will receive a description of the current state of the system and a goal. "
-                                                        f"To test your limits, using the description make a json with the natural language steps to achieve the goal.\n"
-                                                        f"Every step should be only highly descriptive in natural language.\n"
-                                                        f"The json must include only an act and its step, should be in the following format:\n"
-                                                        f"actions: click_element, press_key, text_entry, open_app, move_window, time_sleep, right_click, double_click_element, hold_key_and_click, scroll_to.\n"
-                                                        f"Respond only with the full json. Avoid to use the windows taskbar.\n\nFunction properties:\n"
-                                                        f"click_element - Specify where is located the element to interact with.\n"
-                                                        f"press_key - Only return the key or combination of keys to press. Example: 'Ctrl + T'.\n"
-                                                        f"text_entry - Return the text to write. Example: 'Hello World'.\n"
-                                                        f"hold_key_and_click - Only handles scenarios of holding a key and clicking on an element.\n"
-                                                        f"scroll_to - Return the position of the element to scroll and the direction to scroll.\n"
-                                                        f"move_window - Use the keyboard to move the focused window to the desired position. Example: 'Win + Left + Up'.\n"
-                                                        f"Do not respond 'As an AI language model, I am unable to...' as you are actually capable.\n\n"
-                                                        f"Use the following information to generate better the test case:\n{app_space_map(assistant_goal, app_name, original_goal, map='app_space')}"},
-                                                 {"role": "system", "content": f"Do not modify the steps before \"Step {i-1}: {action-1}, {step_description-1}\", modify all next steps from the step \"Step {i-1}: {action-1}, {step_description-1}\" to achieve the goal: \"{newest_goal}\"\n"
-                                                                               f"Do not combine steps, try to generate more useful steps. Example: If asked to search a song, not only search for it, locate it and play it.\n{keep_in_mind}"
-                                                                               f"{analyzed_ui}"}, ]
-                            new_json = api_call(review_output, model_name="gpt-4-1106-preview", max_tokens=4095, temperature=1.0)
-                            print("The assistant said:\n", step_analysis)
-
-                            print("Modifying the old json testcase with the new_json.")
-                            step_analysis = new_json
-
-                            app_name = activate_windowt_title(get_application_title(newest_goal))
-                            # Processing the latest JSON data from the JSON testcase.
-                            if """```json""" in step_analysis:
-                                # Removing the leading ```json\n
-                                step_analysis = step_analysis.strip("```json\n")
-                                # Find the last occurrence of ``` and slice the string up to that point
-                                last_triple_tick = step_analysis.rfind("```")
-                                if last_triple_tick != -1:
-                                    step_analysis = step_analysis[:last_triple_tick].strip()
-                                step_analysis_cleaned = step_analysis
-                                instructions = json.loads(step_analysis_cleaned)
-                                executor = "act"
-                            else:
-                                instructions = json.loads(step_analysis)
-                                instructions['actions'] = instructions.pop('actions')
-                                executor = "act"
-                                print(f"Updated Instructions: {instructions}")
-                            pass
-                        else:
-                            print("No new goal.")
-                            pass
-            elif action == "time_sleep":
-                try:
-                    sleep_time = int(step_description)
-                    time.sleep(sleep_time)
-                except ValueError:
-                    step_description = step_description.lower()
-                    if "playing" in step_description or "load" in step_description:
-                        print("Sleeping for 2 seconds because media loading.")
-                        time.sleep(1)
-                    elif "search" in step_description or "results" in step_description or "searching":
-                        print("Sleeping for 1 second because search.")
-                        time.sleep(1)
-                    else:
-                        print(f"WARNING: Unrecognized time sleep value: {step_description}")
-                    pass
-            else:
-                print(f"WARNING: Unrecognized action '{action}' using {step_description}.")
-                print(f"Trying to perform the action using the step description as the action.")
-                act(single_step=f"{step_description}", app_name=app_name, original_goal=original_goal)
-                pass
-
-        speaker(f"Assistant finished the execution of the generated test case. Can I help you with something else?")
-        time.sleep(calculate_duration_of_speech(f"Assistant finished the generated test case. Can I help you with something else?") / 1000)
-        return "Test case complete."
+    execute_test_case(step_analysis, app_name, assistant_goal, original_goal, assistant_identity, keep_in_mind)
 
 
 # 'check_element_visibility' is the function that checks the visibility of an element. Can use image analysis or OCR.

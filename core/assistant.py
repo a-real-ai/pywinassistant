@@ -2,12 +2,15 @@ import customtkinter as Ctk
 from PIL import Image, ImageTk
 import time
 import random
+import win32gui
 from queue import Queue
 import speech_recognition as sr
 import threading
 from voice import speaker, set_volume, set_subtitles
 from driver import assistant, act, fast_act, auto_role, perform_simulated_keypress, write_action
 from window_focus import activate_windowt_title
+from window_focus import get_previous_window
+from ocr import ocr_screen
 
 # Initialize the speech recognition and text to speech engines
 assistant_voice_recognition_enabled = True  # Disable if you don't want to use voice recognition
@@ -18,6 +21,7 @@ set_volume(0.25)
 assistant_subtitles_enabled = True
 recognizer = sr.Recognizer()
 message_queue = Queue()
+last_active_window = None  # Variable to store the last active window handle
 Ctk.set_appearance_mode("dark")  # Modes: system (default), light, dark
 Ctk.set_default_color_theme("dark-blue")  # Themes: blue (default), dark-blue, green
 
@@ -238,7 +242,7 @@ def create_context_menu(event_x_root, event_y_root):
     # Buttons with commands
     Ctk.CTkButton(menu_frame, text="Call assistant", command=lambda: menu_command(generate_assistant_test_case(False))).pack(fill="x")
     Ctk.CTkButton(menu_frame, text="Fast action", command=lambda: menu_command(generate_assistant_test_case(True))).pack(fill="x")
-    Ctk.CTkButton(menu_frame, text="Content analysis", command=lambda: menu_command(dummy_command)).pack(fill="x")
+    Ctk.CTkButton(menu_frame, text="Content analysis", command=lambda: menu_command(content_analysis)).pack(fill="x")
 
     # Add separator or space between groups of options (This is an improvisation since Ctk doesn't have a separator widget)
     Ctk.CTkLabel(menu_frame, text="", height=3).pack(fill="x")
@@ -290,11 +294,29 @@ def minimize_assistant():
 def show_config(event):
     # Function to display the settings menu using a custom context menu
     create_context_menu(event.x_root, event.y_root)
+    
+def show_config(event):
+    # Function to display the settings menu using a custom context menu
+    global last_active_window
+    last_active_window = win32gui.GetForegroundWindow()  # Store the active window
+    create_context_menu(event.x_root, event.y_root)
+
 
 # Just for example purpose, you will replace this with actual commands
-def dummy_command():
-    speaker("Dummy item clicked")
-    print("Dummy item clicked")
+def content_analysis():
+    """Analysiert den Textinhalt des aktiven Fensters mit OCR und liest ihn vor."""
+    global last_active_window
+    if last_active_window:
+        win32gui.SetForegroundWindow(last_active_window)  # Set focus to the last active window
+        text = ocr_screen(focused=True)
+        print(f"OCR Output: {text}")  # Add this line
+    if text:
+        speaker(f"The text in the active window is: {text}")
+        show_message(None, f"Text in window: {text}")
+    else:
+        speaker("No text was detected in the active window.")
+        show_message(None, "No text detected.")
+
 
 def generate_assistant_test_case(fast_act=False):
     # Function to perform a fast action
