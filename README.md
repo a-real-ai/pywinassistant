@@ -9,7 +9,7 @@ PyWinAssistant is the first open-source Artificial Narrow Intelligence to elicit
 
 PyWinAssistant has its own set of **reasoning agents**, utilizing Visualization-of-Thought (VoT) and Chain-of-Thought (CoT) to enhance generalization, dynamically simulating actions through abstract GUI semantic dimensions rather than visual processing, making it **future-proof** for next-generation **LLM models**. By **visualizing interface contents** to dynamically **simulate and plan actions** over **abstract GUI semantic dimensions, concepts, and differentials**, PyWinAssistant **redefines computer vision automation**, enabling **high-efficiency visual processing** at a fraction of traditional computational costs. PyWinAssistant has achieved **real-time spatial perception** at an **Operating-System level**, allowing for **memorization of visual cues and tracking of on-screen changes over time**.
 
-By **directly interfacing with Windows' underlying UI hierarchy**, it achieves real-time spatial perception at the OS level while eliminating traditional computer vision pipelines, enabling:
+By **directly interfacing with Windows underlying UI hierarchy**, it achieves real-time spatial perception at the OS level while eliminating traditional computer vision pipelines, enabling:
 *   **100x Efficiency Gains**: Native API access vs pixel-based analysis.
 *   **Blind Operation**: Full functionality on headless systems or minimized windows.
 *   **Precision Abstraction**: Mathematical modeling of GUI relationships rather than visual pattern matching.
@@ -55,8 +55,11 @@ Released before key breakthroughs in AI for Spatial Reasoning, it predates:
     
 
 ### **Development Notes:**
+Further development of this system architecture leads to AGI.
+Imagine it as a synthetic scientist capable of operating scientific software on a computer.
 
-The system's autonomous task decomposition leverages **native semantic differentials** rather than visual changes. Withheld components were added as commented functions like fine-tuning, long-term memory and self-learning mechanisms were designed to evolve **symbolic state representations**, not visual patterns, aligning with AGI development while complying with AI governance standards.
+The system's autonomous task decomposition leverages **native semantic differentials** rather than visual changes, visual changes can be optionally activated for real-time image corruption analysis in GUI/Screen.
+Withheld components that enable AGI "Hierarchical-Temporal Reasoning" (learning, adapting, and predicting across layers of abstraction and time) were added as commented functions into the code for further development; long-term memory and self-learning mechanisms were designed to evolve **symbolic state representations**, not visual patterns, aligning with AGI development while complying with AI governance standards. Visual patterns can be explicitly added into each spatial cognition iteration that PyWinAssistant performs, to achieve "real-time" imaging understanding, this can be fine-tuned to look up for visual patterns, bugs, static, errors, corruption, etc.
 
 Paper related: Visualization-of-Thought Elicits Spatial Reasoning in Large Language Models:
 ![image](https://github.com/a-real-ai/pywinassistant/assets/18397328/58c8e18d-b633-4a35-abc1-b8a76768e4e3)
