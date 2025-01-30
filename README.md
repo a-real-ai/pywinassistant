@@ -14,6 +14,35 @@ By **directly interfacing with Windows' underlying UI hierarchy**, it achieves 
 *   **Blind Operation**: Full functionality on headless systems or minimized windows.
 *   **Precision Abstraction**: Mathematical modeling of GUI relationships rather than visual pattern matching.
 
+  **Image-Free by Design (Core Architecture)**  
+While some projects *require* visual processing for fundamental operation, PyWinAssistant achieves **complete GUI interaction capability without any imaging pipeline** through:  
+
+1. **Native OS Semantic Access**  
+   Direct Windows UIA API integration provides full control metadata:  
+   ```python
+   # Example of an element properties via UIA - No screenshots needed
+   button = uia.Element.find(Name="Submit", ControlType="Button")
+   print(button.BoundingRectangle)  # {x: 120, y: 240, width: 80, height: 30}
+   ```
+
+2. **Optional Imaging Module (Assistant Context Only)**  
+   For specific edge cases, we offer *completely optional* visual supplements:  
+   ```diff
+   # PyWinAssistant imaging functions can be enabled as real-time spatial perception with memorization of visual cues and tracking of on-screen changes over time.
+   + Experimental/opt-in features may use:
+   - OCR fallback / object detection for non-UIA legacy apps.
+   - Visual hash matching for dynamic elements.
+   # These experimental features were added but not fully developed as it was not necessary for the current implementation as it currently works too well. To release in v0.6.5.
+   ```
+
+**Key Differentiation Table**  
+| | PyWinAssistant | Traditional Automation |  
+|-|----------------|------------------------|  
+| **Primary Perception** | UIA Metadata | Screenshots/OCR |  
+| **Vision Dependency** | Optional Add-on | Required Core |  
+| **Headless Ready** | ✅ Native | ❌ Requires virtual display |  
+
+
 PyWinAssistant represents a major paradigm shift in AI, pioneering **pure symbolic computer interaction** through these breakthroughs:
 *   **First Agent** to bypass OCR/imaging entirely for GUI automation.
 *   **First Framework** using Windows UIA as the primary spatial perception channel.
