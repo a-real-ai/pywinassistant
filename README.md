@@ -1,4 +1,4 @@
-**PyWinAssistant** – **MIT Licensed** | **Public Release: December 31, 2023**
+**PyWinAssistant** – **MIT Licensed** | **Public Release: December 31, 2023** | Complies with federal coordinations AI Standards Coordination Working Group, Asilomar AI Principles and IEEE Global Initiative on Ethics of Autonomous and Intelligent Systems.
 
 PyWinAssistant is the first open-source Artificial Narrow Intelligence to elicit spatial reasoning and perception as a generalist agentic framework Computer-Using-Agent that fully operates graphical-user-interfaces (GUIs) for Windows 10/11 **through direct OS-native semantic interaction**. It functions as a Computer-Using-Agent / Large-Action-Model, forming the foundation for a pure **symbolic spatial cognition framework** that enables artificial operation of a computer using only natural language, **without relying on computer vision, OCR, or pixel-level imaging**. PyWinAssistant emulates, plans, and simulates synthetic Human-Interface-Device (HID) interactions through **native Windows Accessibility APIs**, eliciting human-like abstraction across geometric, hierarchical, and temporal dimensions at an Operating-System level. This OS-integrated approach provides a future-proof, generalized, modular, and scalable Natural-Language-Programming framework for autonomous spatial navigation within a computer, marking an important step in symbolic reasoning towards AGI.
 
@@ -16,7 +16,6 @@ By **directly interfacing with Windows underlying UI hierarchy**, it achieves r
 
   **Image-Free by Design (Core Architecture)**  
 While some projects *require* visual processing for fundamental operation, PyWinAssistant achieves **complete GUI interaction capability without any imaging pipeline** through:  
-
 1. **Native OS Semantic Access**  
    Direct Windows UIA API integration provides full control metadata:  
    ```python
@@ -24,7 +23,6 @@ While some projects *require* visual processing for fundamental operation, PyWin
    button = uia.Element.find(Name="Submit", ControlType="Button")
    print(button.BoundingRectangle)  # {x: 120, y: 240, width: 80, height: 30}
    ```
-
 2. **Optional Imaging Module (Assistant Context Only)**  
    For specific edge cases, we offer *completely optional* visual supplements:  
    ```diff
@@ -34,14 +32,12 @@ While some projects *require* visual processing for fundamental operation, PyWin
    - Visual hash matching for dynamic elements.
    # These experimental features were added but not fully developed as it was not necessary for the current implementation as it currently works too well. To release in v0.6.5.
    ```
-
 **Key Differentiation Table**  
 | | PyWinAssistant | Traditional Automation |  
 |-|----------------|------------------------|  
 | **Primary Perception** | UIA Metadata | Screenshots/OCR |  
 | **Vision Dependency** | Optional Add-on | Required Core |  
 | **Headless Ready** | ✅ Native | ❌ Requires virtual display |  
-
 
 PyWinAssistant represents a major paradigm shift in AI, pioneering **pure symbolic computer interaction** through these breakthroughs:
 *   **First Agent** to bypass OCR/imaging entirely for GUI automation.
@@ -52,14 +48,11 @@ Released before key breakthroughs in AI for Spatial Reasoning, it predates:
 *   **Microsoft’s** [**Visualization-of-Thought research paper**](https://arxiv.org/abs/2404.03622) (April 4, 2024)
 *   **Anthropic** [**Claude’s Computer-Use Agent**](https://www.anthropic.com/news/3-5-models-and-computer-use) (October 22, 2024)
 *   **OpenIA** [**ChatGPT’s Operator Computer-Using Agent (CUA)**](https://openai.com/index/introducing-operator/) (January 23, 2025)
-    
 
 ### **Development Notes:**
-Further development of this system architecture leads to AGI.
-Imagine it as a synthetic scientist capable of operating scientific software on a computer.
-
+PyWinAssistant is limited to model's intelligence and time to inference. New advancements on LLM's are required to reach for AGI.
 The system's autonomous task decomposition leverages **native semantic differentials** rather than visual changes, visual changes can be optionally activated for real-time image corruption analysis in GUI/Screen.
-Withheld components that enable AGI "Hierarchical-Temporal Reasoning" (learning, adapting, and predicting across layers of abstraction and time) were added as commented functions into the code for further development; long-term memory and self-learning mechanisms were designed to evolve **symbolic state representations**, not visual patterns, aligning with AGI development while complying with AI governance standards. Visual patterns can be explicitly added into each spatial cognition iteration that PyWinAssistant performs, to achieve "real-time" imaging understanding, this can be fine-tuned to look up for visual patterns, bugs, static, errors, corruption, etc.
+Long-term memory and self-learning mechanisms were designed to evolve **symbolic state representations**, and can be also represented into visual patterns, aligning with AGI development. Visual patterns can be added into each spatial cognition iteration that PyWinAssistant performs, to achieve "real-time" imaging understanding, this can be fine-tuned to look up for visual patterns, bugs, static, errors, corruption, etc.
 
 Paper related: Visualization-of-Thought Elicits Spatial Reasoning in Large Language Models:
 ![image](https://github.com/a-real-ai/pywinassistant/assets/18397328/58c8e18d-b633-4a35-abc1-b8a76768e4e3)
