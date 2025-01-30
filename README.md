@@ -1,12 +1,34 @@
-# PyWinAssistant
-"PyWinAssistant" is the first Large Action Model, Open Source Windows 10/11 Artificial Narrow Intelligence framework (Released on 31 Dec 2023, before Microsoft's VoT paper) to artificially assist any win32api human User Interfaces by utilizing Visualization-of-Thought (VoT) Elicits Spatial Reasoning in Large Language Models without OCR / object detection / segmentation. This improves the generality quality and minimizes the overall data usage of LLM and vision models. It has built-in assistance options to improve human utilization of a computer, with a new technical approach to User Interface and User Experience assistance and testing by spatial visualization of thought, generalizes correctly any natural language prompt, and plans to perform correct actions into the OS with security in mind.
+**PyWinAssistant** – **MIT Licensed** | **Public Release: December 31, 2023**
 
-Paper related: Visualization-of-Thought Elicits Spatial Reasoning in Large Language Models (Released on 4 Apr 2024)
+PyWinAssistant is the first open-source **Artificial Narrow Intelligence** to elicit **spatial reasoning and perception** as a **generalist agentic framework** for **Windows 10/11**. It functions as a **Computer-Using-Agent / Large-Action-Model**, forming the foundation for a **spatial cognition framework** that enables artificial operation of a computer using only **natural language**. PyWinAssistant **emulates, plans, and simulates** synthetic **Human-Interface-Device (HID) interactions**, eliciting **human-like abstraction** across **geometric, hierarchical, and temporal dimensions** at an **Operating-System level**. PyWinAssistant provides a **future-proof, generalized, modular, and scalable agentic framework** for **autonomous spatial navigation** within a computer, marking an important step in **spatial symbolic reasoning** towards **AGI**.
+
+PyWinAssistant has its own set of **reasoning agents**, utilizing **Visualization-of-Thought (VoT)** and **Chain-of-Thought (CoT)** to **enhance generalization and accuracy**, making it **future-proof** for next-generation **LLM models**. By **visualizing interface contents** to dynamically **simulate and plan actions** over **abstract GUI semantic dimensions, concepts, and differentials**, PyWinAssistant **redefines computer vision automation**, enabling **high-efficiency visual processing** at a fraction of traditional computational costs. PyWinAssistant has achieved **real-time spatial perception** at an **Operating-System level**, allowing for **memorization of visual cues and tracking of on-screen changes over time**.
+
+PyWinAssistant represents a **major technological advancement in AI**, pioneering the development of **Computer-Using Agents**. Released **before** key breakthroughs in **AI for Spatial Reasoning**, it predates:
+
+*   **Microsoft’s** [**Visualization-of-Thought research paper**](https://arxiv.org/abs/2404.03622) (April 4, 2024)
+*   **Anthropic** [**Claude’s Computer-Use Agent**](https://www.anthropic.com/news/3-5-models-and-computer-use) (October 22, 2024)
+*   **OpenIA** [**ChatGPT’s Operator Computer-Using Agent (CUA)**](https://openai.com/index/introducing-operator/) (January 23, 2025)
+    
+
+### **Development Notes:**
+
+Autonomous systems that **decompose tasks, iterate through subgoals, and refine outputs autonomously** are key features of **Agentic AI paradigms**, which align with **AGI development**. Certain components were **withheld** to comply with **AI governance standards**, including:
+
+*   **Long-term memory**
+*   **Self-learning mechanisms**
+*   **Fine-tuning refinement**
+*   **Synthetic semantic spaces**
+
+Further development of this framework **advances AGI**, though it is **highly dependent on faster test-time compute execution with more advanced models**. For **AGI to emerge**, such frameworks must integrate **broader sensory and memory inputs** with **cross-domain adaptability**. PyWinAssistant’s **open-source nature** makes it a **valuable testbed** for these explorations.
+
+Paper related: Visualization-of-Thought Elicits Spatial Reasoning in Large Language Models:
 ![image](https://github.com/a-real-ai/pywinassistant/assets/18397328/58c8e18d-b633-4a35-abc1-b8a76768e4e3)
 https://arxiv.org/abs/2404.03622
 
 # Overview
 
+PyWinAssistant includes built-in assistant features designed to enhance human-computer interaction for all users. It integrates real-time voice recognition, customizable assistant personalities, subtitles, and chat functionality.
 Talk with your computer friendly and naturally to perform any User Interface activity.
 Use natural language to operate freely your Windows Operating System.
 Generates and plans test cases of your User Interface applications for continuous testing on any Win32api supported application by simply using natural language.
@@ -65,13 +87,13 @@ Chrome, Firefox, OperaGX, Discord, Telegram, Spotify...
 # Key Features
 - Dynamic Case Generator: The assistant() function accepts a goal parameter, which is a natural language command, and intelligently maps it to a series of executable actions. This allows for a seamless translation of user intentions into effective actions on the computer.
 1. Single Action Execution:
-The act() function is a streamlined method for executing single, straightforward actions, enhancing the tool's efficiency and responsiveness.
-2. Advanced Context Handling: The framework is adept at understanding context through analyzing the screen and the application, ensuring that actions are carried out with an awareness of the necessary prerequisites or steps.
+The act() function is a streamlined method for executing actions, enhancing the tool's efficiency and responsiveness.
+2. Advanced Context Handling: The framework is adept at understanding context by analyzing the screen and the application, ensuring that actions are carried out with an awareness of the necessary prerequisites or steps.
 3. Semantic router map: The framework has a database of a semantic router map to successfully execute generated test cases. This semantic maps can be created by other AI.
 4. Wide Application Range: From multimedia control (like playing songs or pausing playback on Spotify and YouTube) to complex actions (like creating AI-generated text, sending emails, or managing applications like Telegram or Firefox), the framework covers a broad spectrum of tasks.
 5. Customizable AI Identity: The write_action() function allows for a customizable assistant identity, enabling personalized interactions and responses that align with the user's preferences or the nature of the task.
 6. Robust Error Handling and Feedback: The framework is designed to handle unexpected scenarios gracefully, providing clear feedback and ensuring reliability. (In Overview)
-7. Projects for mood and personality: Generate or suggest now and then useful scenarios based in your mood and personality. (In Overview)
+7. Projects for mood and personality: Generate or suggest now and then useful scenarios based on your mood and personality. (In Overview)
 
 
 # Technical Innovations
