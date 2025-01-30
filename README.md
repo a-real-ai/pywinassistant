@@ -3,7 +3,7 @@
 PyWinAssistant is the first open-source Artificial Narrow Intelligence to elicit spatial reasoning and perception as a generalist agentic framework Computer-Using-Agent that fully operates graphical-user-interfaces (GUIs) for Windows 10/11 **through direct OS-native semantic interaction**. It functions as a Computer-Using-Agent / Large-Action-Model, forming the foundation for a pure **symbolic spatial cognition framework** that enables artificial operation of a computer using only natural language, **without relying on computer vision, OCR, or pixel-level imaging**. PyWinAssistant emulates, plans, and simulates synthetic Human-Interface-Device (HID) interactions through **native Windows Accessibility APIs**, eliciting human-like abstraction across geometric, hierarchical, and temporal dimensions at an Operating-System level. This OS-integrated approach provides a future-proof, generalized, modular, and scalable Natural-Language-Programming framework for autonomous spatial navigation within a computer, marking an important step in symbolic reasoning towards AGI.
 
 **Key Features:**
-*   **Not relying on Imaging Pipeline**: Operates exclusively through Windows UI Automation (UIA) and programmatic GUI semantics.
+*   **Not relying only on Imaging Pipeline**: Operates exclusively through Windows UI Automation (UIA) and programmatic GUI semantics.
 *   **Symbolic Spatial Mapping**: Hierarchical element tracking via OS-native parent/child relationships and coordinate systems.
 *   **Non-Visual Perception**: Real-time interface understanding through direct metadata extraction (control types, states, positions).
 *   **Visual Perception**: A single screenshot can elicit comprehension and perception with attention to detail by visualizing goal intent and environment changes in a spatial space over time, can be fine-tuned to look up for visual cues, bugs, causal reasoning bugs, static, semantic grounding, errors, corruption...
@@ -14,7 +14,6 @@ By **directly interfacing with Windows underlying UI hierarchy**, it achieves r
 *   **100x Efficiency Gains**: Native API access vs pixel-based analysis.
 *   **Blind Operation**: Can function on headless systems, virtual machines, or minimized windows.
 *   **Precision Abstraction**: Mathematical modeling of GUI relationships rather than visual pattern matching.
-*   **Benchmarking of Next-Gen AI LLM models**: PyWinAssistant is a standardized system model of Scaling test-time compute agentic systems to elicit spatial reasoning and perception to perform goals synthetically.
 
   **Image-Free by Design (Core Architecture)**  
 While some projects *require* visual processing for fundamental operation, PyWinAssistant achieves **complete GUI interaction capability without any imaging pipeline** through:  
