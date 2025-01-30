@@ -6,14 +6,15 @@ PyWinAssistant is the first open-source Artificial Narrow Intelligence to elicit
 *   **Not relying on Imaging Pipeline**: Operates exclusively through Windows UI Automation (UIA) and programmatic GUI semantics.
 *   **Symbolic Spatial Mapping**: Hierarchical element tracking via OS-native parent/child relationships and coordinate systems.
 *   **Non-Visual Perception**: Real-time interface understanding through direct metadata extraction (control types, states, positions).
-*   **Visual Perception**: Imaging is only needed once for further context based on goal intent and visual cues over time, pattern cognition can be added into each spatial cognition iteration that PyWinAssistant performs, to achieve "real-time" imaging understanding, this can be fine-tuned to look up for any visual cue, bugs, static, errors, corruption, etc.
+*   **Visual Perception**: A single screenshot can elicit comprehension and perception with attention to detail by visualizing goal intent and environment changes in a spatial space over time, can be fine-tuned to look up for visual cues, bugs, causal reasoning bugs, static, semantic grounding, errors, corruption...
 
 PyWinAssistant has its own set of **reasoning agents**, utilizing Visualization-of-Thought (VoT) and Chain-of-Thought (CoT) to enhance generalization, dynamically simulating actions through abstract GUI semantic dimensions rather than visual processing, making it **future-proof** for next-generation **LLM models**. By **visualizing interface contents** to dynamically **simulate and plan actions** over **abstract GUI semantic dimensions, concepts, and differentials**, PyWinAssistant **redefines computer vision automation**, enabling **high-efficiency visual processing** at a fraction of traditional computational costs. PyWinAssistant has achieved **real-time spatial perception** at an **Operating-System level**, allowing for **memorization of visual cues and tracking of on-screen changes over time**.
 
 By **directly interfacing with Windows underlying UI hierarchy**, it achieves real-time spatial perception at the OS level while eliminating traditional computer vision pipelines, enabling:
 *   **100x Efficiency Gains**: Native API access vs pixel-based analysis.
-*   **Blind Operation**: Full functionality on headless systems or minimized windows.
+*   **Blind Operation**: Can function on headless systems, virtual machines, or minimized windows.
 *   **Precision Abstraction**: Mathematical modeling of GUI relationships rather than visual pattern matching.
+*   **Benchmarking of Next-Gen AI LLM models**: PyWinAssistant is a standardized system model of Scaling test-time compute agentic systems to elicit spatial reasoning and perception to perform goals synthetically.
 
   **Image-Free by Design (Core Architecture)**  
 While some projects *require* visual processing for fundamental operation, PyWinAssistant achieves **complete GUI interaction capability without any imaging pipeline** through:  
