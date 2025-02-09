@@ -1,4 +1,4 @@
-**PyWinAssistant** – **MIT Licensed** | **Public Release: December 31, 2023** |  Complies with federal coordinations AI Standards for Complex Adaptive Systems, Asilomar AI Principles and IEEE Global Initiative on Ethics of Autonomous and Intelligent Systems.
+**PyWinAssistant: An artificial assistant** – **MIT Licensed** | **Public Release: December 31, 2023** |  Complies with federal coordinations AI Standards for Complex Adaptive Systems, Asilomar AI Principles and IEEE Global Initiative on Ethics of Autonomous and Intelligent Systems.
 
 ---
 
@@ -11,10 +11,12 @@ PyWinAssistant is the first open-source Artificial Narrow Intelligence to elicit
 *   **Visual Perception**: A single screenshot can elicit comprehension and perception with attention to detail by visualizing goal intent and environment changes in a spatial space over time, can be fine-tuned to look up for visual cues, bugs, causal reasoning bugs, static, semantic grounding, errors, corruption...
 *   **Unified Automation**: Automatic element detection. Combines GUI, system, and web automation under one Python API. Eliminates context-switching between tools.
 *   **AI-Powered Script Generation**: Translates natural language or demonstrations into JSON code. Democratizes automation beyond coders.
-*   **Self-Healing Workflows**: Auto-adjusts to UI changes (e.g., element ID shifts). Reduces maintenance overhead.
-*   **AI/ML Integration**: Using NLP to generate scripts (e.g., “Automate Excel” → code) or self-correcting selectors.
+*   **Self-Healing Workflows**: Auto-adjusts to UI changes (e.g., element ID shifts). Reducing maintenance overhead, making PyWinAssistant's algorithm future-proof.
+*   **AI/ML Integration**: Using NLP to generate scripts (e.g., “Automate Application” → plan of test execution steps in JSON) with self-correcting selectors.
 *   **Cross-Context Automation**: Seamlessly combining GUI, web, and API workflows in a Pythonic way, unifying disjointed automation methods (GUI, API, web) into a single framework.
-*   **Accessibility**: Simplifying complex automation for non-experts (e.g., declarative syntax or visual workflows).
+*   **Accessibility**: Enhancing accessibility for users with different needs, enabling voice or simple text commands to control complex actions. 
+*   **Generalization**: Elicits spatial cognition to understand and execute a wide range of commands in a natural, intuitive manner.
+*    **Small and compact**: PyWinAssistant functions as an example algorithm of a modular and generalized computer assistant framework that elicits spatial cognition.
 
 PyWinAssistant has its own set of **reasoning agents**, utilizing Visualization-of-Thought (VoT) and Chain-of-Thought (CoT) to enhance generalization, dynamically simulating actions through abstract GUI semantic dimensions rather than visual processing, making it **future-proof** for next-generation **LLM models**. By **visualizing interface contents** to dynamically **simulate and plan actions** over **abstract GUI semantic dimensions, concepts, and differentials**, PyWinAssistant **redefines computer vision automation**, enabling **high-efficiency visual processing** at a fraction of traditional computational costs. PyWinAssistant has achieved **real-time spatial perception** at an **Operating-System level**, allowing for **memorization of visual cues and tracking of on-screen changes over time**.
 
@@ -149,7 +151,9 @@ assistant("Like this song")  # Language-first
    Leverages LLMs to handle UI changes (e.g., Spotify’s 2023 UI overhaul).
 
 4. **From Developers to Everyone**:  
-   Makes advanced automation accessible through natural language.
+   Makes advanced automation accessible through natural language, improving the generality quality and minimizing the overall data usage of LLM and vision models.
+   Has built-in assistance options to improve human utilization of a computer, with a new technical approach to User Interface and User Experience assistance and testing by spatial visualization of thought,
+   generalizes correctly any natural language prompt, and plans to perform correct actions into the OS with security in mind.
    
 By **directly interfacing with Windows underlying UI hierarchy**, it achieves real-time spatial perception at the OS level while eliminating traditional computer vision pipelines, enabling:
 *   **100x Efficiency Gains**: Native API access.
@@ -158,6 +162,7 @@ By **directly interfacing with Windows underlying UI hierarchy**, it achieves r
 
   **Image-Free by Design (Core Architecture)**  
 While some projects *require* visual processing for fundamental operation, PyWinAssistant achieves **complete GUI interaction capability without an imaging pipeline** through:  
+
 1. **Native OS Semantic Access**  
    Direct Windows UIA API integration provides full control metadata:  
    ```python
@@ -169,8 +174,8 @@ While some projects *require* visual processing for fundamental operation, PyWin
 
    ```diff
    # PyWinAssistant imaging functions like Pixel level visualization can be enabled as real-time spatial perception with memorization of visual cues and tracking of on-screen changes over time.
-   + Pixel level visualization 
-   + Visual hash matching for dynamic elements.
+   + Pixel level visualization, 
+   + Visual hash matching for dynamic elements. 
    - OCR fallback / object detection for non-UIA legacy apps.
    # The experimental features of OCR were added but not fully developed as it was not necessary for the current implementation as the assistant currently works too well without it.
    ```
