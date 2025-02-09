@@ -20,7 +20,7 @@ Released before key breakthroughs in AI for Spatial Reasoning, it predates:
 *   **OpenIA** [**ChatGPT’s Operator Computer-Using Agent (CUA)**](https://openai.com/index/introducing-operator/) (January 23, 2025)
 
 PyWinAssistant represents a major paradigm shift in AI and automation by pioneering **pure symbolic computer interaction** bridging **human intent with GUI automation at an OS level** through these breakthroughs:
-*   **First Agent** to bypass OCR/imaging entirely for Computer-Using-Agent GUI automation.
+*   **First Agent** to bypass OCR/imaging for Computer-Using-Agent GUI automation.
 *   **First Framework** using Windows UIA as the primary spatial perception channel.
 *   **First System** demonstrating OS-native hierarchical-temporal reasoning.
 
@@ -33,8 +33,8 @@ Automation tools require scripting (e.g., AutoHotkey) or API integration (e.g., 
 **PyWinAssistant Breakthrough**:  
 ```python
 # True generalization for natural language directly driving UI actions
-assistant("Play Daft Punk on Spotify and email the lyrics to my boss")
-# The agent chooses a fitting song according to the related context to comply with user intent.
+assistant("Play Daft Punk on Spotify and email the lyrics to my friend")
+# The agent chooses a fitting item according to the related context to comply with user intent.
 ```
 
 **Mechanism**: Combines UIAutomation’s GUI control detection with LLMs to:
@@ -55,19 +55,30 @@ Tools operate in app silos (e.g., Power Automate connectors).
 
 **PyWinAssistant Innovation**:  
 ```python
-# Maintains context across apps using UIA tree (Example for further development)
+# Notes:
+# The full set of steps generation from the Assistant is working flawlessly, but in-step modifier and memory-content retrieval was purposely disabled and commented into the code- [def act()](https://github.com/a-real-ai/pywinassistant/blob/6aae4e514a0dc661f7ed640181663f483972bc1e/core/driver.py#L648C1-L648C8)
+# to comply with federal coordinations AI Standards for Complex Adaptive Systems, Asilomar AI Principles and IEEE Global Initiative on Ethics of Autonomous and Intelligent Systems.
+
+# Accurately maintains context and intent across apps using UIA tree and spatial memory: (Example for further development)
+assistant("Find for the best and cheapest flight to Mexico, and also look for local hotels and suggest me on new tabs the best on cultural options")
+assistant("Look for various pizza coupons for anything but pineapple, fill in the details to order and show me the results")
+
+# PyWinAssistant is highly modular (example):
 def workflow():
-    song = analyze_app("Spotify", search="current_track")  # UIA
+    song = assistant(goal="get the current track")  # UIA
     write_action(f"Review '{song}': Great bassline!", app="Notepad")  # Win32
-    fast_act("Post to Twitter", app="Chrome")  # Web
+    assistant(goal="Post on twitter the written text from notepad")  # Web
+
+# The previous set of actions can be also executed by simply using natural language:
+assistant(f"Get the current song playing and in notepad put the title as Review song name: Great bassline, and write about why it is a great baseline, then post it on twitter", assistant_identity="You're an expert music critic")
 ```
 **Key Advancements**:
 1. **Unified Control Graph**: Treats all apps as nodes in a single UIA-accessible graph
 2. **State Transfer**: Passes data between apps via clipboard/UIA properties
-3. **Error Recovery**: Uses LLMs to reinterpret failed actions contextually  
+3. **Semantic Transfer**: Passes semantics of goal intent acros all steps
+4. **Error Recovery**: Uses agentic reasoning systems to avoid failing actions
 
 **Impact**: Enables workflows previously requiring custom middleware.
-
 ---
 
 ### **3. Probabilistic Automation Engine**
@@ -77,15 +88,23 @@ Deterministic scripts fail on UI changes.
 **PyWinAssistant’s Solution**:  
 ```python
 # Adaptive element discovery
-def click_element(name):
-    candidates = analyze_app(search_strings=[name, synonyms(name)])
-    best_match = llm_rank(candidates, context=last_actions)  # LLM-guided
-    click(best_match)
+def fast_action(goal):
+    speaker(f"Clicking onto the element without visioning context. No imaging is required.")
+    analyzed_ui = analyze_app(application=ai_choosen_app, additional_search_options=generated_keywords)
+    
+    gen_coordinates = [{"role": "assistant",
+        f"content": f"You are an AI Windows Mouse Agent that can interact with the mouse. Only respond with the "
+              f"predicted coordinates of the mouse click position to the center of the element object "
+              f"\"x=, y=\" to achieve the goal."},
+        {"role": "system", "content": f"Goal: {single_step}\n\nContext:{original_goal}\n{analyzed_ui}"}]
+    coordinates = api_call(gen_coordinates, model_name="gpt-4-1106-preview", max_tokens=100, temperature=0.0)
+    print(f"AI decision coordinates: \'{coordinates}\'")
 ```
 **Revolutionary Features**:
 - **Semantic Search**: `synonyms("download") → ["save", "export", "↓ icon"]`
-- **Spatial Probability**: Prioritizes elements by utilizing sets of self-reasoning agents
-- **Self-Healing**: Automatically retries with alternative control paths
+- **Spatial Probability**: Prioritizes elements by utilizing sets of self-reasoning agents for the synthetic operation of the actions
+- **Spatial-Prevention**: Senses and prevents possible bad actions or misaligned step execution by utilizing sets of self-reasoning agents
+- **Self-Healing**: Automatically chooses the perfect plan to execute without failing its step reasoning, by utilizing sets of self-reasoning agents
 
 ---
 
@@ -103,8 +122,8 @@ ControlClick, x=152 y=311  # Fragile coordinates
 ```python
 assistant("Like this song")  # Language-first
 ```
-**Shift Metrics**:
-| Metric                | Traditional Tools | PyWinAssistant |
+
+| **Shift Metrics**:    | Traditional Tools | PyWinAssistant |
 |-----------------------|-------------------|----------------|
 | Learning Curve        | Days, even months | Minutes        |
 | Cross-App Workflows   | Manual Integration| Automatic      |
@@ -127,12 +146,12 @@ assistant("Like this song")  # Language-first
    Makes advanced automation accessible through natural language.
    
 By **directly interfacing with Windows underlying UI hierarchy**, it achieves real-time spatial perception at the OS level while eliminating traditional computer vision pipelines, enabling:
-*   **100x Efficiency Gains**: Native API access vs pixel-based analysis.
+*   **100x Efficiency Gains**: Native API access.
 *   **Blind Operation**: Can function on headless systems, virtual machines, or minimized windows.
 *   **Precision Abstraction**: Mathematical modeling of GUI relationships rather than visual pattern matching.
 
   **Image-Free by Design (Core Architecture)**  
-While some projects *require* visual processing for fundamental operation, PyWinAssistant achieves **complete GUI interaction capability without any imaging pipeline** through:  
+While some projects *require* visual processing for fundamental operation, PyWinAssistant achieves **complete GUI interaction capability without an imaging pipeline** through:  
 1. **Native OS Semantic Access**  
    Direct Windows UIA API integration provides full control metadata:  
    ```python
@@ -140,17 +159,17 @@ While some projects *require* visual processing for fundamental operation, PyWin
    button = uia.Element.find(Name="Submit", ControlType="Button")
    print(button.BoundingRectangle)  # {x: 120, y: 240, width: 80, height: 30}
    ```
-2. **Optional Imaging Module (Assistant Context Only)**  
-   For specific edge cases, we offer *completely optional* visual supplements:  
+2. **Imaging Module**  
+
    ```diff
-   # PyWinAssistant imaging functions can be enabled as real-time spatial perception with memorization of visual cues and tracking of on-screen changes over time.
-   + Experimental/opt-in features may use:
+   # PyWinAssistant imaging functions like Pixel level visualization can be enabled as real-time spatial perception with memorization of visual cues and tracking of on-screen changes over time.
+   + Pixel level visualization 
+   + Visual hash matching for dynamic elements.
    - OCR fallback / object detection for non-UIA legacy apps.
-   - Visual hash matching for dynamic elements.
-   # These experimental features were added but not fully developed as it was not necessary for the current implementation as it currently works too well. To release in v0.6.5.
+   # The experimental features of OCR were added but not fully developed as it was not necessary for the current implementation as the assistant currently works too well without it.
    ```
-**Key Differentiation Table**  
-| | PyWinAssistant | Traditional Automation |  
+
+| **Key Differentiation** | PyWinAssistant | Traditional Automation |  
 |-|----------------|------------------------|  
 | **Primary Perception** | UIA Metadata | Screenshots/OCR |  
 | **Vision Dependency** | Optional Add-on | Required Core |  
