@@ -10,7 +10,7 @@ PyWinAssistant is the first open-source Artificial Narrow Intelligence to elicit
 *   **Non-Visual Perception**: Real-time interface understanding through direct metadata extraction (control types, states, positions).
 *   **Visual Perception**: A single screenshot can elicit comprehension and perception with attention to detail by visualizing goal intent and environment changes in a spatial space over time, can be fine-tuned to look up for visual cues, bugs, causal reasoning bugs, static, semantic grounding, errors, corruption...
 *   **Unified Automation**: Automatic element detection. Combines GUI, system, and web automation under one Python API. Eliminates context-switching between tools.
-*   **AI-Powered Script Generation**: Translates natural language or demonstrations into JSON code. Democratizes automation beyond coders.
+*   **AI-Powered Script Generation**: Translates natural language or demonstrations into any kind of code inside any IDE or text edit areas.
 *   **Self-Healing Workflows**: Auto-adjusts to UI changes (e.g., element ID shifts). Reducing maintenance overhead, making PyWinAssistant's algorithm future-proof.
 *   **AI/ML Integration**: Using NLP to generate scripts (e.g., “Automate Application” → plan of test execution steps in JSON) with self-correcting selectors.
 *   **Cross-Context Automation**: Seamlessly combining GUI, web, and API workflows in a Pythonic way, unifying disjointed automation methods (GUI, API, web) into a single framework.
@@ -109,7 +109,7 @@ def fast_action(goal):
     print(f"AI decision coordinates: \'{coordinates}\'")
 ```
 **Revolutionary Features**:
-- **Semantic Search**: `synonyms("download") → ["save", "export", "↓ icon"]`
+- **Semantic Search by thinking**: Example `synonyms("download") → ["save", "export", "↓ icon"]`
 - **Spatial Probability**: Prioritizes elements by utilizing sets of self-reasoning agents for the synthetic operation of the actions
 - **Spatial-Prevention**: Senses and prevents possible bad actions or misaligned step execution by utilizing sets of self-reasoning agents
 - **Self-Healing**: Automatically chooses the perfect plan to execute without failing its step reasoning, by utilizing sets of self-reasoning agents
@@ -174,8 +174,9 @@ While some projects *require* visual processing for fundamental operation, PyWin
 
    ```diff
    # PyWinAssistant imaging functions like Pixel level visualization can be enabled as real-time spatial perception with memorization of visual cues and tracking of on-screen changes over time.
-   + Pixel level visualization, 
-   + Visual hash matching for dynamic elements. 
+   + Capable of planning successful sets of highly technical steps to perform operations on a computer at an OS level, with only one screenshot.
+   + Pixel level visualization.
+   + Visual hash matching can be enabled for dynamic elements. 
    - OCR fallback / object detection for non-UIA legacy apps.
    # The experimental features of OCR were added but not fully developed as it was not necessary for the current implementation as the assistant currently works too well without it.
    ```
@@ -189,8 +190,7 @@ While some projects *require* visual processing for fundamental operation, PyWin
 ---
 
 ### **Development Notes:**
-PyWinAssistant is limited to model's intelligence and time to inference. New advancements on LLM's are required to reach for AGI.
-While current constraints exist (modern app support, speed), they highlight the framework’s position at the **automation frontier** rather than flaws. As UIA/LLMs evolve, these gaps will shrink exponentially.
+PyWinAssistant is limited to model's intelligence and time to inference. New advancements on LLM's are required to reach for a complete Artificial General Intelligence system with conscious Artificial Narrow Intelligences managing it.
 The system's autonomous task decomposition leverages **native semantic differentials** rather than visual changes, visual changes can be optionally activated for real-time image corruption analysis in GUI/Screen.
 Long-term memory and self-learning mechanisms were designed to evolve **symbolic state representations**, and can be also represented into visual patterns, aligning with AGI development.
 
@@ -240,7 +240,7 @@ https://github.com/a-real-ai/pywinassistant/assets/18397328/25b39d8c-62d6-442e-9
 ---
 
 ### Use your computer as an assistant - Real-time usage of planning VoT, an example of a Computer-Using-Agent; Large-Action-Model.
-Takes only 1 screenshot: Gets to know what the user is doing and what is that the user wants to achieve, the assistant plans to perform it.
+**Takes only 1 screenshot**: Gets to know what the user is doing and what is that the user wants to achieve, the assistant plans to perform it.
 ```
 Voice Recognized Prompt: Make a new post on twitter saying hello world and a brief greeting explaining you're an artificial intelligence.
 ```
