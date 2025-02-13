@@ -190,7 +190,7 @@ While some projects *require* visual processing for fundamental operation, PyWin
 ---
 
 ### **Development Notes:**
-PyWinAssistant is limited to model's intelligence and time to inference. New advancements on LLM's are required to reach for a complete Artificial General Intelligence system with conscious Artificial Narrow Intelligences managing it.
+PyWinAssistant is limited to model's intelligence and time to inference. New advancements on LLM's are required to reach for a complete Artificial General Intelligence system with Artificial Narrow Intelligences managing it.
 The system's autonomous task decomposition leverages **native semantic differentials** rather than visual changes, visual changes can be optionally activated for real-time image corruption analysis in GUI/Screen.
 Long-term memory and self-learning mechanisms were designed to evolve **symbolic state representations**, and can be also represented into visual patterns, aligning with AGI development.
 
