@@ -16,3 +16,4 @@ uiautomation
 gtts
 pygame
 pyAudio
+python-dotenv

@@ -2,14 +2,16 @@ import pyautogui
 import pygetwindow as gw
 import base64
 import requests
+import os
 import io
 from PIL import Image
+from dotenv import load_dotenv
 
 # Assuming that the `activate_window_title` function is defined in another module correctly
 from window_focus import activate_windowt_title
 
 # OpenAI API Key
-api_key = 'insert_your_api_key_here'
+openai_api_key = os.getenv('OPENAI_API_KEY')
 
 
 # Function to focus a window given its title
@@ -47,7 +49,7 @@ def analyze_image(base64_image, window_title, additional_context='What’s in th
     # Your logic to call the OpenAI API
     headers = {
         "Content-Type": "application/json",
-        "Authorization": f"Bearer {api_key}"
+        "Authorization": f"Bearer {openai_api_key}"
     }
 
     payload = {
