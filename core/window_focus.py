@@ -12,6 +12,7 @@ import win32process
 import psutil
 import winreg
 
+
 # Define necessary functions from the user32 DLL
 user32 = ctypes.WinDLL('user32', use_last_error=True)
 EnumWindows = user32.EnumWindows
@@ -280,6 +281,10 @@ def activate_windowt_title(application_name):
 
     return get_active_window_title()
 
+
+def get_previous_window():
+    """Gibt das Handle des zuvor aktiven Fensters zurück."""
+    return win32gui.GetWindow(win32gui.GetForegroundWindow(), win32gui.GW_HWNDPREV)
 
 
 if __name__ == "__main__":
